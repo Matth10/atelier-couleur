@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Analyser un espace — Atelier Couleur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Karla:ital,wght@0,400;0,500;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.checklist li {
+  border-bottom: 1px solid var(--line);
+  padding: 12px 0;
+}
+
+.checklist li:last-child {
+  border-bottom: none;
+}
+
+.checklist label {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  cursor: pointer;
+}
+
+.checklist input[type="checkbox"] {
+  flex: none;
+  margin-top: 4px;
+}
+
+.checklist span {
+  color: var(--muted);
+}
+
+.case-wrap {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+#case-room {
+  --c60: #E5DFD4;
+  --c30: #8FA3A0;
+  --c10: #C99A5B;
+}
+
+#case-room .room {
+  display: block;
+}
+
+#case-room.is-boosted .room [fill^="var(--c10"] {
+  opacity: 1 !important;
+  filter: saturate(1.2);
+}
+
+.case-progress {
+  font-size: .85rem;
+  color: var(--muted);
+  margin: 20px 0 0;
+}
+
+.case-panel fieldset {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 16px;
+  margin: 8px 0 0;
+}
+
+.case-panel legend {
+  font-weight: 700;
+  padding: 0 6px;
+}
+
+.case-debrief h3 {
+  margin: 24px 0 .5em;
+  font-size: 1.1rem;
+}
+
+.case-debrief ul {
+  padding-left: 1.2em;
+}
+
+.case-debrief li {
+  margin: 10px 0;
+}
+
+</style>
+</head>
+<body data-lesson="07-analyse">
+<header class="site-header" data-nav></header>
+<main>
+  <p class="eyebrow">Leçon 7 · Application · ~25 min</p>
+  <h1>Analyser un espace</h1>
+  <p class="lede">Avant de choisir une seule teinte, regarde la pièce elle-même : son orientation, ses volumes, ce qui s’y trouve déjà. Cette leçon te donne une méthode en six points, puis te met devant un cas concret pour l’appliquer, étape par étape.</p>
+
+  <section>
+    <h2>La méthode en six points</h2>
+    <p>Les repères des leçons précédentes — orientation, harmonies, répartition — ne prennent tout leur sens qu’une fois rapportés à un espace réel. Avant toute décision de couleur, parcours ces six points. Ils forment une liste de contrôle réutilisable : c’est la même que tu retrouveras à l’exercice 1 de la <a href="08-exercices.html">leçon 8</a>, à appliquer cette fois à une pièce de chez toi.</p>
+    <ul class="checklist">
+      <li><label><input type="checkbox"><span><strong>Orientation et lumière</strong> — de quel côté vient la lumière, et à quel moment de la journée vis-tu vraiment dans cette pièce ? (<a href="05-lumiere.html">leçon 5</a>)</span></label></li>
+      <li><label><input type="checkbox"><span><strong>Volumes et hauteur</strong> — quelles sont les dimensions réelles de la pièce, pas seulement sa surface au sol ?</span></label></li>
+      <li><label><input type="checkbox"><span><strong>Usage et moments de vie</strong> — qui occupe cette pièce, et surtout quand : le matin, le soir, en semaine, le week-end ?</span></label></li>
+      <li><label><input type="checkbox"><span><strong>L’existant : sol, menuiseries, cheminée</strong> — qu’est-ce qui reste fixe, et avec quoi la nouvelle palette doit-elle s’accorder ? (<a href="05-lumiere.html">leçon 5</a>)</span></label></li>
+      <li><label><input type="checkbox"><span><strong>Circulation entre les pièces</strong> — que voit-on depuis le couloir ou la pièce voisine, pour que les teintes s’enchaînent sans heurt ?</span></label></li>
+      <li><label><input type="checkbox"><span><strong>Ambiance recherchée</strong> — en un mot, quel effet veux-tu obtenir : chaleureuse, apaisante, dynamique ?</span></label></li>
+    </ul>
+
+    <aside class="cas-reel">
+      <p class="cas-eyebrow">Cas réel</p>
+      <h3>Le Moulin Papotte <span class="cas-place">— moulin du XV<sup>e</sup>, Bligny-sur-Ouche</span></h3>
+      <ul class="cas-swatches">
+        <li><span class="swatch" style="background:#EDE6D8"></span><span class="cas-shade">Papier Washi</span><span class="hex">HEJU01</span></li>
+        <li><span class="swatch" style="background:#D3A79E"></span><span class="cas-shade">La Jouvencelle</span><span class="hex">R151</span></li>
+        <li><span class="swatch" style="background:#9E4A42"></span><span class="cas-shade">La Sensibilité</span><span class="hex">R079</span></li>
+        <li><span class="swatch" style="background:#AB9080"></span><span class="cas-shade">Musc</span><span class="hex">RMDV40</span></li>
+      </ul>
+      <p>Un moulin du XV<sup>e</sup> siècle en Bourgogne, transformé en quatre gîtes et un café-épicerie sur 2,5 hectares traversés par l’Ouche. Relis la méthode à travers ce cas : <strong>l’existant</strong> commande tout — de la pierre ancienne, d’où le choix d’une peinture à la chaux, retenue précisément parce qu’elle laisse voir cette « matière vivante » au lieu de la recouvrir. L’<strong>usage</strong> commande la suite : on vient là pour se déconnecter, ce que le projet traduit en une palette chaude qui va du rose poudré au rouge profond et au terracotta.</p>
+      <p>Regarde enfin la <strong>circulation</strong> : quatre logements et un commerce, tenus par une même famille chaude déclinée d’une unité à l’autre. C’est le même raisonnement qu’entre deux pièces d’un appartement, à une autre échelle. Deux réserves d’honnêteté : le projet ne publie ni l’orientation des pièces ni l’affectation des teintes, et tu retrouves ici <em>Musc</em> — la teinte du café parisien de la <a href="01-vocabulaire.html">leçon 1</a>, employée dans un tout autre contexte. Une teinte n’a pas d’usage assigné ; c’est l’analyse de l’espace qui décide.</p>
+      <p class="cas-source"><a href="https://ressource-peintures.com/inspiration/projet/renovation-d-un-moulin/">Voir le projet chez Ressource ↗</a> · Teintes reconstituées à titre indicatif.</p>
+    </aside>
+  </section>
+
+  <section class="atelier">
+    <h2>Atelier — Étude de cas : le salon nord</h2>
+    <p>Salon orienté nord, sol en chêne moyen (un élément fixe), habité surtout le soir. L’ambiance recherchée : chaleureuse. Applique la méthode, étape par étape : chaque choix se répercute immédiatement sur la pièce.</p>
+    <div class="case-wrap">
+      <div id="case-room"><div class="case-room-svg"></div></div>
+      <p class="case-progress" id="case-progress"></p>
+      <div class="case-panel" id="case-panel" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <aside class="further">
+    <h2>Pour aller plus loin</h2>
+    <ul>
+      <li><a href="https://www.farrow-ball.com/fr/comment-la-lumiere-metamorphose-la-couleur">Comment la lumière métamorphose la couleur</a> — l’article de Farrow &amp; Ball, pour revoir en détail le point « orientation et lumière » de la méthode (en français).</li>
+      <li><a href="https://www.youtube.com/@SophieFerjani">Sophie Ferjani</a> — la chaîne YouTube de la décoratrice, pour voir cette méthode appliquée à de vrais intérieurs (en français).</li>
+      <li><a href="https://ressource-peintures.com/inspiration/">Inspiration</a> — le journal de Ressource, pour approfondir le choix des teintes et des finitions une fois l’espace analysé (en français).</li>
+    </ul>
+  </aside>
+</main>
+<footer class="site-footer" data-lesson-nav></footer>
+<script src="assets/course.js"></script>
+<script>
+(function () {
+  const room = document.getElementById('case-room');
+  const svgHolder = room && room.querySelector('.case-room-svg');
+  const progress = document.getElementById('case-progress');
+  const panel = document.getElementById('case-panel');
+  if (!room || !svgHolder || !progress || !panel) return;
+
+  svgHolder.innerHTML = AC.roomSVG();
+
+  const BASES = { chaude: '#E9DCC3', profonde: '#41505C' };
+  const COMBOS = {
+    chaude: { camaieu: ['#CDBA94', '#8F7B54'], divisee: ['#5F7E9E', '#B04A5A'] },
+    profonde: { camaieu: ['#5C6B78', '#8CA0B0'], divisee: ['#C98A4B', '#B04A5A'] },
+  };
+
+  const STEPS = [
+    { q: 'Lumière froide et constante. Ta stratégie de base ?', choices: [
+      { t: 'Compenser : dominante chaude à base jaune', apply: (s) => { s.base = 'chaude'; },
+        why: 'Classique et sûr : les tons à base jaune réchauffent la lumière du nord (conseil Farrow & Ball).' },
+      { t: 'Assumer : dominante profonde enveloppante', apply: (s) => { s.base = 'profonde'; },
+        why: 'Assumé et cosy : au nord, une couleur profonde crée un écrin — l’autre stratégie validée par les coloristes.' } ] },
+    { q: 'Usage le soir, ambiance chaleureuse. Quelle harmonie pour le duo secondaire/accent ?', choices: [
+      { t: 'Camaïeu de la dominante', apply: (s) => { s.harmony = 'camaieu'; },
+        why: 'Doux et unifié ; attention à garder du contraste de valeur (leçon 1).' },
+      { t: 'Complémentaire divisée autour de la dominante', apply: (s) => { s.harmony = 'divisee'; },
+        why: 'Vivant sans l’affrontement de la complémentaire pure.' } ] },
+    { q: 'Répartition ?', choices: [
+      { t: '60-30-10 classique', apply: (s) => { s.boost = false; },
+        why: 'Le repère : dominante sur les murs, secondaire en mobilier/rideaux, accent en accessoires.' },
+      { t: 'Accent renforcé (50-30-20)', apply: (s) => { s.boost = true; },
+        why: 'Le soir, sous 2700K, les accents chauds s’aviveront — dose en connaissance de cause (leçon 5).' } ] },
+  ];
+
+  let state, path, stepIndex;
+
+  function paint() {
+    if (state.base) room.style.setProperty('--c60', BASES[state.base]);
+    if (state.base && state.harmony) {
+      const combo = COMBOS[state.base][state.harmony];
+      room.style.setProperty('--c30', combo[0]);
+      room.style.setProperty('--c10', combo[1]);
+    }
+    room.classList.toggle('is-boosted', !!state.boost);
+  }
+
+  function render() {
+    panel.innerHTML = '';
+    if (stepIndex >= STEPS.length) {
+      progress.textContent = '';
+      renderDebrief();
+      return;
+    }
+    progress.textContent = 'Étape ' + (stepIndex + 1) + ' / ' + STEPS.length;
+    const step = STEPS[stepIndex];
+    const fs = document.createElement('fieldset');
+    const lg = document.createElement('legend');
+    lg.textContent = step.q;
+    fs.append(lg);
+    step.choices.forEach((ch) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'quiz-choice';
+      b.textContent = ch.t;
+      b.addEventListener('click', () => {
+        ch.apply(state);
+        path.push({ t: ch.t, why: ch.why });
+        paint();
+        stepIndex += 1;
+        render();
+      });
+      fs.append(b);
+    });
+    panel.append(fs);
+  }
+
+  function renderDebrief() {
+    const box = document.createElement('div');
+    box.className = 'case-debrief';
+    const h3 = document.createElement('h3');
+    h3.textContent = 'Ton parcours';
+    box.append(h3);
+    const ul = document.createElement('ul');
+    path.forEach((p) => {
+      const li = document.createElement('li');
+      const strong = document.createElement('strong');
+      strong.textContent = p.t;
+      li.append(strong, document.createTextNode(' — ' + p.why));
+      ul.append(li);
+    });
+    box.append(ul);
+    const valid = document.createElement('p');
+    valid.textContent = 'À chaque étape, les deux options tiennent la route : un autre chemin t’aurait mené à un salon tout aussi réussi, simplement différent. Il n’y avait pas de mauvaise réponse, seulement des partis pris.';
+    box.append(valid);
+    const again = document.createElement('button');
+    again.type = 'button';
+    again.className = 'btn';
+    again.textContent = 'Recommencer l’étude de cas';
+    again.addEventListener('click', reset);
+    box.append(again);
+    panel.append(box);
+  }
+
+  function reset() {
+    state = { base: null, harmony: null, boost: false };
+    path = [];
+    stepIndex = 0;
+    room.style.removeProperty('--c60');
+    room.style.removeProperty('--c30');
+    room.style.removeProperty('--c10');
+    room.classList.remove('is-boosted');
+    render();
+  }
+
+  reset();
+})();
+</script>
+</body>
+</html>

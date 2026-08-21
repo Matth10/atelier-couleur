@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accueil — Atelier Couleur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Karla:ital,wght@0,400;0,500;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+#lessons {
+  margin-top: 3rem;
+}
+
+#lessons > p {
+  margin-bottom: 1.5rem;
+}
+
+.progress-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.progress-list li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.progress-list li:last-child {
+  border-bottom: none;
+}
+
+.done-check {
+  flex-shrink: 0;
+  width: 1.5rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.progress-list li:not(.is-done) .done-check {
+  color: var(--muted);
+}
+
+.progress-list li.is-done {
+  opacity: 0.7;
+}
+
+.progress-list a {
+  flex: 1;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.progress-list a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.progress-list .meta {
+  flex-shrink: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.note {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: var(--surface);
+  border-left: 4px solid var(--accent);
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+</style>
+</head>
+<body>
+<header class="site-header" data-nav></header>
+<main>
+  <h1>Atelier Couleur</h1>
+  <p class="lede">Apprendre à choisir et marier les couleurs en décoration d’intérieur — l’équivalent d’une journée de formation pro, gratuit, à ton rythme.</p>
+
+  <section>
+    <h2>Ce que tu vas maîtriser</h2>
+    <p>Au fil de ces huit leçons interactives, tu apprendras à analyser la lumière et l’architecture d’une pièce, à reconnaître ce qui fonctionne (ou pas) dans une palette existante. Tu comprendras pourquoi certaines couleurs s’accordent naturellement, et comment les principes de l’harmonie te permettent de construire des combinaisons qui tiennent debout. Enfin, tu seras capable de composer une palette adaptée à l’orientation, la luminosité et l’atmosphère que tu veux créer dans un espace.</p>
+  </section>
+
+  <section>
+    <h2>Comment ça marche</h2>
+    <p>Chaque leçon explore un concept clé, du vocabulaire technique aux applications pratiques. Aucun prérequis : chaque terme technique est expliqué. Les concepts que tu découvres, tu les manipules : tu expérimentes sur des outils visuels, tu composes des palettes, tu analyses des espaces réels. Compte entre 20 et 30 minutes par leçon.</p>
+  </section>
+
+  <section>
+    <h2>Le parcours</h2>
+    <p>Les huit leçons se divisent en trois phases. <strong>Comprendre</strong> (leçons 1-2) : tu maîtrises les bases — comment la couleur fonctionne, la structure du cercle chromatique. <strong>Outils</strong> (leçons 3-5) : tu découvres les principes d’harmonie, la psychologie des teintes, et surtout, l’impact décisif de la lumière. <strong>Application</strong> (leçons 6-8) : tu mets tout en pratique — tu composes des palettes cohérentes, tu analyses des espaces réels, tu consolides ton apprentissage.</p>
+  </section>
+
+  <div id="lessons"></div>
+
+  <p class="note">Ta progression est enregistrée uniquement dans ce navigateur : si tu supprimes tes données de navigation, tu la perds.</p>
+</main>
+<footer class="site-footer">Cours libre et gratuit, construit à partir de sources vérifiées — aucune inscription.</footer>
+<script src="assets/course.js"></script>
+<script>
+(function () {
+  const el = document.getElementById('lessons');
+  if (!el || !window.AC) return;
+  const done = AC.progress.get();
+  const next = AC.LESSONS.find((l) => !done.includes(l.slug));
+  if (done.length && next) {
+    const p = document.createElement('p');
+    const i = AC.LESSONS.indexOf(next);
+    p.innerHTML = '<a class="btn" href="' + next.slug + '.html">Reprendre : Leçon ' + (i + 1) + ' — ' + next.title + '</a>';
+    el.append(p);
+  }
+  const ul = document.createElement('ul');
+  ul.className = 'progress-list';
+  AC.LESSONS.forEach((l, i) => {
+    const li = document.createElement('li');
+    const d = done.includes(l.slug);
+    if (d) li.className = 'is-done';
+    li.innerHTML = '<span class="done-check">' + (d ? '✔' : '·') + '</span>' +
+      '<a href="' + l.slug + '.html">Leçon ' + (i + 1) + ' — ' + l.title + '</a>' +
+      '<span class="meta">~' + l.min + ' min</span>';
+    ul.append(li);
+  });
+  el.append(ul);
+})();
+</script>
+</body>
+</html>

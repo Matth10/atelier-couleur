@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le cercle chromatique — Atelier Couleur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Karla:ital,wght@0,400;0,500;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+#wheel {
+  display: block;
+  margin: 0 auto 20px;
+}
+
+#wheel-info {
+  min-height: 84px;
+  text-align: center;
+}
+
+#wheel-info .hue-name {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0 0 4px;
+}
+
+#wheel-info p {
+  margin: 4px 0;
+}
+
+.mixer-row {
+  margin-bottom: 20px;
+}
+
+.mixer-row h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.mixer-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.mixer-result {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.05rem;
+  margin: 10px 0 20px;
+}
+
+.mixer-result .swatch {
+  width: 44px;
+  height: 44px;
+}
+</style>
+</head>
+<body data-lesson="02-cercle">
+<header class="site-header" data-nav></header>
+<main>
+  <p class="eyebrow">Leçon 2 · Comprendre · ~20 min</p>
+  <h1>Le cercle chromatique</h1>
+  <p class="lede">Le cercle chromatique organise les teintes selon une logique simple : trois couleurs de base donnent naissance à toutes les autres. Une fois cette construction comprise, tu repères d’un coup d’œil les teintes voisines, opposées ou dérivées d’une même famille.</p>
+
+  <section>
+    <h2>Le cercle RYB, l’outil du peintre</h2>
+    <p>Le cercle que tu vas manipuler ici est un cercle RYB (Rouge, Jaune, Bleu), popularisé par le peintre et théoricien Johannes Itten. Il organise douze teintes en couronne, réparties en trois familles : primaires, secondaires et tertiaires.</p>
+    <p>Les primaires — rouge, jaune, bleu — sont le point de départ : dans ce système, on ne peut pas les obtenir en mélangeant d’autres couleurs. Mélange deux primaires voisines à parts égales et tu obtiens une secondaire : rouge + jaune donne l’orangé, jaune + bleu donne le vert, bleu + rouge donne le violet.</p>
+    <p>Chaque tertiaire se forme à son tour en mélangeant une primaire avec la secondaire qui la touche — rouge et orangé donnent ainsi le rouge orangé. Trois primaires, trois secondaires, six tertiaires : voilà les douze teintes du cercle.</p>
+    <p>Précision honnête : physiquement, les vraies primaires soustractives sont le cyan, le magenta et le jaune — mais le cercle RYB reste, depuis Itten, l’outil d’intuition que peintres et décorateurs utilisent pour mélanger les couleurs et marier les teintes.</p>
+  </section>
+
+  <section class="atelier">
+    <h2>Atelier — La roue</h2>
+    <p>Clique sur une teinte du cercle pour l’identifier : son nom, sa famille et sa température.</p>
+    <canvas id="wheel" style="width:min(360px,90%)" aria-label="Cercle chromatique de 12 teintes" role="img"></canvas>
+    <div id="wheel-info">
+      <p>Clique sur une teinte du cercle pour commencer.</p>
+    </div>
+  </section>
+
+  <section class="atelier">
+    <h2>Atelier — Le mélangeur</h2>
+    <p>Choisis deux teintes voisines pour reconstituer un mélange : deux primaires donnent une secondaire, une primaire et la secondaire qui la touche donnent une tertiaire.</p>
+    <div id="mixer">
+      <div class="mixer-row">
+        <h3>Primaires</h3>
+        <div class="mixer-buttons">
+          <button type="button" class="btn mixer-btn" data-i="0">Rouge</button>
+          <button type="button" class="btn mixer-btn" data-i="4">Jaune</button>
+          <button type="button" class="btn mixer-btn" data-i="8">Bleu</button>
+        </div>
+      </div>
+      <div class="mixer-row">
+        <h3>Secondaires</h3>
+        <div class="mixer-buttons">
+          <button type="button" class="btn mixer-btn" data-i="2">Orangé</button>
+          <button type="button" class="btn mixer-btn" data-i="6">Vert</button>
+          <button type="button" class="btn mixer-btn" data-i="10">Violet</button>
+        </div>
+      </div>
+      <p class="mixer-result" id="mixer-result" aria-live="polite"></p>
+      <button type="button" class="btn" id="mixer-reset">Recommencer</button>
+    </div>
+  </section>
+
+  <aside class="further">
+    <h2>Pour aller plus loin</h2>
+    <ul>
+      <li><a href="https://color.adobe.com/fr/create/color-wheel">Adobe Color</a> — roue chromatique interactive, en français.</li>
+      <li><a href="https://paletton.com">Paletton</a> — roue de couleurs plus poussée, sans compte requis, avec simulation de daltonisme (en anglais).</li>
+    </ul>
+  </aside>
+</main>
+<footer class="site-footer" data-lesson-nav></footer>
+<script src="assets/course.js"></script>
+<script>
+(function () {
+  const cv = document.getElementById('wheel');
+  const info = document.getElementById('wheel-info');
+  if (!cv || !info) return;
+  const FAMILY_EXPLAIN = {
+    primaire: 'une teinte de base, à l’origine de toutes les autres.',
+    secondaire: 'un mélange à parts égales de deux primaires voisines.',
+    tertiaire: 'un mélange d’une primaire et de la secondaire qui la touche.',
+  };
+  function renderInfo(i) {
+    const h = AC.HUES[i];
+    info.innerHTML =
+      '<p class="hue-name">' + h.name + '</p>' +
+      '<p>Famille : <strong>' + h.family + '</strong> — ' + FAMILY_EXPLAIN[h.family] + '</p>' +
+      '<p>Température : <strong>' + h.temp + '</strong></p>';
+  }
+  const state = {
+    selected: [],
+    onPick(i) {
+      state.selected = [i];
+      AC.drawWheel(cv, state);
+      renderInfo(i);
+    },
+  };
+  AC.drawWheel(cv, state);
+  window.addEventListener('resize', () => AC.drawWheel(cv, state));
+})();
+
+(function () {
+  const el = document.getElementById('mixer');
+  if (!el) return;
+  const MIX = {
+    '0-4': 2, '4-8': 6, '0-8': 10,
+    '0-2': 1, '2-4': 3, '4-6': 5, '6-8': 7, '8-10': 9, '0-10': 11,
+  };
+  const buttons = Array.from(el.querySelectorAll('.mixer-btn'));
+  const result = document.getElementById('mixer-result');
+  const resetBtn = document.getElementById('mixer-reset');
+  const state = { selected: [] };
+  function key(a, b) {
+    return [a, b].sort((x, y) => x - y).join('-');
+  }
+  function render() {
+    buttons.forEach((b) => {
+      const i = Number(b.dataset.i);
+      b.classList.toggle('is-active', state.selected.includes(i));
+    });
+    if (state.selected.length < 2) {
+      result.innerHTML = '';
+      return;
+    }
+    const k = key(state.selected[0], state.selected[1]);
+    const r = MIX[k];
+    if (r === undefined) {
+      result.textContent = 'Ces deux teintes ne se mélangent pas directement ici — choisis deux teintes voisines sur le cercle.';
+      return;
+    }
+    const a = AC.HUES[state.selected[0]], b = AC.HUES[state.selected[1]], c = AC.HUES[r];
+    result.innerHTML =
+      '<span class="swatch" style="background:' + c.hex + '"></span>' +
+      '<span>' + a.name + ' + ' + b.name + ' = ' + c.name + '</span>';
+  }
+  buttons.forEach((b) => {
+    b.addEventListener('click', () => {
+      const i = Number(b.dataset.i);
+      const idx = state.selected.indexOf(i);
+      if (idx >= 0) {
+        state.selected.splice(idx, 1);
+      } else if (state.selected.length >= 2) {
+        state.selected = [i];
+      } else {
+        state.selected.push(i);
+      }
+      render();
+    });
+  });
+  resetBtn.addEventListener('click', () => {
+    state.selected = [];
+    render();
+  });
+  render();
+})();
+</script>
+</body>
+</html>

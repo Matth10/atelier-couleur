@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La couleur, comment ça marche — Atelier Couleur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Karla:ital,wght@0,400;0,500;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+.tsl-controls {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 12px 16px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.tsl-controls label {
+  font-weight: 500;
+}
+
+#tsl-swatch {
+  width: 120px;
+  height: 120px;
+  margin: 4px 0 14px;
+}
+
+#tsl-out {
+  font-size: 1.05rem;
+}
+
+.cf-card {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 14px;
+  background: var(--paper);
+  text-align: center;
+}
+
+.cf-card .swatch {
+  width: 100%;
+  height: 90px;
+  margin-bottom: 10px;
+}
+
+.cf-name {
+  font-weight: 500;
+  margin: 0 0 10px;
+}
+
+.cf-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.cf-buttons button {
+  flex: 1;
+}
+
+.cf-card .quiz-feedback {
+  text-align: left;
+}
+
+.valeur-pairs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 18px 0;
+}
+
+@media (max-width: 480px) {
+  .valeur-pairs {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pair {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 14px;
+  transition: filter .3s;
+}
+
+.pair-swatches {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.pair-swatches .swatch {
+  flex: 1;
+  width: auto;
+  height: 100px;
+}
+
+.pair-label {
+  margin: 0;
+  font-size: .95rem;
+  color: var(--muted);
+}
+
+.squint .pair {
+  filter: grayscale(1) blur(3px);
+}
+</style>
+</head>
+<body data-lesson="01-vocabulaire">
+<header class="site-header" data-nav></header>
+<main>
+  <p class="eyebrow">Leçon 1 · Comprendre · ~25 min</p>
+  <h1>La couleur, comment ça marche</h1>
+  <p class="lede">Avant de choisir une couleur, apprends à la nommer précisément. C’est ce vocabulaire qui te permettra ensuite de comparer deux teintes, d’ajuster une palette et d’expliquer tes choix — à toi-même comme à un client.</p>
+
+  <section>
+    <h2>Teinte, saturation, luminosité</h2>
+    <p>En français, on décrit une couleur avec trois valeurs : la <strong>teinte</strong>, la <strong>saturation</strong> et la <strong>luminosité</strong> — TSL, l’équivalent du HSL anglo-saxon. La teinte, c’est la couleur pure, sa position sur le cercle chromatique : rouge, jaune, bleu vert… La saturation mesure l’intensité de cette couleur, de gris terne à couleur pleine et vive. La luminosité indique la part de blanc ou de noir mêlée à la teinte, du presque noir au presque blanc.</p>
+    <p>Ces trois valeurs sont indépendantes : tu peux garder la même teinte et faire varier la saturation ou la luminosité sans jamais changer de famille de couleur. C’est ce qui te permet, plus tard, de construire une palette cohérente à partir d’une seule teinte.</p>
+  </section>
+
+  <section class="atelier">
+    <h2>Atelier — Explorateur TSL</h2>
+    <p>Bouge chaque curseur l’un après l’autre et observe ce qu’il change, seul, dans la couleur affichée.</p>
+    <div id="tsl">
+      <div class="tsl-controls">
+        <label for="tsl-t">Teinte</label>
+        <input type="range" id="tsl-t" min="0" max="360" value="220">
+        <label for="tsl-s">Saturation</label>
+        <input type="range" id="tsl-s" min="0" max="100" value="70">
+        <label for="tsl-l">Luminosité</label>
+        <input type="range" id="tsl-l" min="0" max="100" value="55">
+      </div>
+      <div id="tsl-swatch" class="swatch"></div>
+      <p id="tsl-out" class="hex"></p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Chaudes et froides</h2>
+    <p>Les teintes du rouge au jaune sont dites <strong>chaudes</strong> : elles semblent avancer vers toi, on les dit « saillantes ». Les teintes qui tirent vers le bleu sont <strong>froides</strong> : elles semblent reculer, on les dit « fuyantes ». C’est un levier spatial concret : dans une pièce étroite et longue, peindre le mur du fond dans une teinte froide le fait reculer visuellement, et la pièce paraît plus large.</p>
+    <p>Mais la chaleur d’une couleur est <strong>relative</strong>, pas absolue. Un bleu peut être « chaud » comparé à un autre bleu plus violet ; un jaune peut être « froid » comparé à un autre jaune plus orangé. Le classement chaud/froid dépend toujours de la couleur que tu poses à côté.</p>
+
+    <aside class="cas-reel">
+      <p class="cas-eyebrow">Cas réel</p>
+      <h3>Noir Coffee Shop <span class="cas-place">— torréfacteur, Paris 9<sup>e</sup></span></h3>
+      <ul class="cas-swatches">
+        <li><span class="swatch" style="background:#AB9080"></span><span class="cas-shade">Musc</span><span class="hex">RMDV40</span></li>
+      </ul>
+      <p>Le studio Archi OUI a traité ce petit café d’une seule teinte : <em>Musc</em>, un brun rosé chaud, en peinture à la chaux finition brossée, murs et courbes comprises. Une teinte chaude posée partout, c’est le levier spatial de cette leçon utilisé à l’envers : elle avance vers toi de tous les côtés à la fois, et un volume étroit devient enveloppant au lieu de paraître exigu.</p>
+      <p>Note aussi ce qui n’a pas été fait : aucun contraste de teinte, aucun accent. Ce qui structure l’espace, ce sont les écarts de valeur créés par la chaux brossée et par la lumière sur les courbes — la matière fait le travail que ferait ailleurs une deuxième couleur.</p>
+      <p class="cas-source"><a href="https://ressource-peintures.com/inspiration/projet/noir-coffee-shop/">Voir le projet chez Ressource ↗</a> · Teintes reconstituées à titre indicatif.</p>
+    </aside>
+
+    <aside class="note">
+      <p><strong>Pourquoi « reconstituées ».</strong> Ce cours te montrera plusieurs projets réels avec les références exactes des teintes employées. Les fabricants ne publient jamais les valeurs numériques de leurs teintes : les échantillons colorés de ces encadrés sont donc <em>notre</em> reconstitution, d’après le nom de la teinte et la description du projet. Prends-les comme une indication de famille et d’ambiance, jamais comme la couleur elle-même — de toute façon, aucun écran ne te dira ce que vaut une peinture sur un mur. C’est tout l’objet du protocole de test de la <a href="05-lumiere.html">leçon 5</a>.</p>
+    </aside>
+  </section>
+
+  <section class="atelier">
+    <h2>Atelier — Chaud ou froid ?</h2>
+    <p>Classe ces huit échantillons. Deux d’entre eux sont des pièges : des teintes de transition, qui te rappellent que la chaleur reste relative. Sur le cercle de la <a href="02-cercle.html">leçon 2</a>, elles sont notées « transition » — c’est la même nuance, vue autrement.</p>
+    <div id="chaud-froid" class="card-grid"></div>
+  </section>
+
+  <section>
+    <h2>Valeur, ton, camaïeu</h2>
+    <p>La <strong>valeur</strong> d’une couleur, c’est son degré de clair-obscur — à peu près ce que mesure la luminosité, mais pensé indépendamment de la teinte : deux couleurs de teintes très différentes peuvent avoir la même valeur. Un <strong>ton</strong>, c’est une variation d’une teinte par sa valeur : bleu clair et bleu marine sont deux tons de bleu. Décorer « ton sur ton », c’est composer une pièce avec plusieurs tons d’une même teinte.</p>
+    <p>Le terme traditionnel pour ça, c’est le <strong>camaïeu</strong> : selon le CNRTL, des tons différents d’une seule couleur. C’est l’un des schémas les plus sûrs en décoration, parce qu’il n’y a jamais de conflit de teinte à gérer — seulement des écarts de valeur.</p>
+    <p>Deux couleurs de teintes opposées mais de valeur proche peuvent se fondre en une masse confuse, tandis qu’un camaïeu aux valeurs bien écartées reste lisible et net.</p>
+  </section>
+
+  <section class="atelier">
+    <h2>Atelier — Le test de la valeur</h2>
+    <p>Plisse les yeux (ou clique sur le bouton) : la teinte disparaît, la valeur reste. Compare les deux paires.</p>
+    <div id="valeur-test">
+      <button type="button" class="btn" id="squint-btn" aria-pressed="false">Plisser les yeux</button>
+      <div class="valeur-pairs">
+        <div class="pair">
+          <div class="pair-swatches">
+            <div class="swatch" style="background:#C0453C"></div>
+            <div class="swatch" style="background:#4E8A54"></div>
+          </div>
+          <p class="pair-label">Paire A — rouge / vert, teintes opposées</p>
+        </div>
+        <div class="pair">
+          <div class="pair-swatches">
+            <div class="swatch" style="background:#B9CBDE"></div>
+            <div class="swatch" style="background:#25344E"></div>
+          </div>
+          <p class="pair-label">Paire B — camaïeu de bleu</p>
+        </div>
+      </div>
+    </div>
+    <p>Une fois les yeux plissés, la paire A devient presque uniforme : rouge et vert, malgré leur teinte opposée, ont une valeur proche. La paire B, elle, reste lisible : ses deux bleus sont de la même teinte, mais leurs valeurs sont très écartées. Contraste de teinte n’est pas contraste de valeur — et c’est la valeur qui structure une pièce.</p>
+  </section>
+
+  <aside class="further">
+    <h2>Pour aller plus loin</h2>
+    <ul>
+      <li><a href="https://color.adobe.com/fr/create/color-wheel">Adobe Color</a> — roue chromatique interactive, en français (en cours de migration vers Adobe Express).</li>
+      <li>Johannes Itten, <em>Art de la couleur</em> (Dessain et Tolra) — en médiathèque ; l’édition abrégée est la plus courante.</li>
+    </ul>
+  </aside>
+</main>
+<footer class="site-footer" data-lesson-nav></footer>
+<script src="assets/course.js"></script>
+<script>
+(function () {
+  const el = document.getElementById('tsl');
+  if (!el) return;
+  const [t, s, l] = ['t', 's', 'l'].map((id) => document.getElementById('tsl-' + id));
+  const sw = document.getElementById('tsl-swatch'), out = document.getElementById('tsl-out');
+  function hex(h, sv, lv) {
+    const a = (sv / 100) * Math.min(lv / 100, 1 - lv / 100);
+    const f = (n) => {
+      const k = (n + h / 30) % 12;
+      const c = lv / 100 - a * Math.max(-1, Math.min(k - 3, 9 - k, 1));
+      return Math.round(255 * c).toString(16).padStart(2, '0');
+    };
+    return '#' + f(0) + f(8) + f(4);
+  }
+  function render() {
+    const c = 'hsl(' + t.value + ' ' + s.value + '% ' + l.value + '%)';
+    sw.style.background = c;
+    out.textContent = hex(+t.value, +s.value, +l.value).toUpperCase() +
+      ' — teinte ' + t.value + '°, saturation ' + s.value + ' %, luminosité ' + l.value + ' %';
+  }
+  [t, s, l].forEach((r) => r.addEventListener('input', render));
+  render();
+})();
+
+(function () {
+  const el = document.getElementById('chaud-froid');
+  if (!el) return;
+  const ITEMS = [
+    { hex: '#C93A32', name: 'Rouge brique', t: 'chaud', why: 'Famille rouge→jaune : chaud.' },
+    { hex: '#35669F', name: 'Bleu de Prusse', t: 'froid', why: 'Les bleus sont le cœur des froids.' },
+    { hex: '#EFA63C', name: 'Ocre doré', t: 'chaud', why: 'Jaune orangé : chaud, il avance.' },
+    { hex: '#3E8B89', name: 'Bleu canard', t: 'froid', why: 'Bleu-vert : froid, il recule.' },
+    { hex: '#9C3F72', name: 'Framboise', t: 'chaud', why: 'Piège : un rouge violacé reste chaud… mais c’est un chaud « refroidi » par le bleu. La chaleur est relative.' },
+    { hex: '#A9B24A', name: 'Vert anis', t: 'froid', why: 'Piège inverse : un vert jauni est un froid « réchauffé ». Les transitions existent.' },
+    { hex: '#E67E2E', name: 'Orangé', t: 'chaud', why: 'Le plus chaud du cercle.' },
+    { hex: '#6F4B9B', name: 'Violet', t: 'froid', why: 'Dominante bleue : froid.' },
+  ];
+  ITEMS.forEach((item) => {
+    const card = document.createElement('div');
+    card.className = 'cf-card';
+    const sw = document.createElement('div');
+    sw.className = 'swatch';
+    sw.style.background = item.hex;
+    const name = document.createElement('p');
+    name.className = 'cf-name';
+    name.innerHTML = item.name + ' — <span class="hex">' + item.hex.toUpperCase() + '</span>';
+    const buttons = document.createElement('div');
+    buttons.className = 'cf-buttons';
+    const fb = document.createElement('p');
+    fb.className = 'quiz-feedback';
+    [['chaud', 'Chaud'], ['froid', 'Froid']].forEach(([choice, label]) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'quiz-choice';
+      b.textContent = label;
+      b.addEventListener('click', () => {
+        if (card.dataset.done) return;
+        card.dataset.done = '1';
+        const ok = choice === item.t;
+        b.classList.add(ok ? 'is-right' : 'is-wrong');
+        buttons.querySelectorAll('button').forEach((x) => { x.disabled = true; });
+        fb.textContent = (ok ? '✔ ' : '✘ ') + item.why;
+      });
+      buttons.append(b);
+    });
+    card.append(sw, name, buttons, fb);
+    el.append(card);
+  });
+})();
+
+(function () {
+  const el = document.getElementById('valeur-test');
+  if (!el) return;
+  const btn = document.getElementById('squint-btn');
+  btn.addEventListener('click', () => {
+    const on = el.classList.toggle('squint');
+    btn.textContent = on ? 'Rouvrir les yeux' : 'Plisser les yeux';
+    btn.setAttribute('aria-pressed', String(on));
+  });
+})();
+</script>
+</body>
+</html>

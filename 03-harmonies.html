@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Les harmonies de couleurs — Atelier Couleur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Karla:ital,wght@0,400;0,500;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+#harmony-wheel {
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.harmony-modes {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.swatch-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 16px 0 4px;
+}
+
+.swatch-item {
+  text-align: center;
+}
+
+.swatch-item .swatch {
+  margin-bottom: 6px;
+}
+
+.moodboards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.moodboard-card svg {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  display: block;
+}
+
+.moodboard-card p {
+  margin: 8px 0 0;
+  font-size: .9rem;
+  color: var(--muted);
+  text-align: center;
+}
+</style>
+</head>
+<body data-lesson="03-harmonies">
+<header class="site-header" data-nav></header>
+<main>
+  <p class="eyebrow">Leçon 3 · Outils · ~30 min</p>
+  <h1>Les harmonies de couleurs</h1>
+  <p class="lede">Le cercle chromatique ne sert pas qu’à nommer les teintes : il te dit aussi lesquelles s’accordent entre elles. Six figures géométriques suffisent à couvrir l’essentiel — plus fiables que l’instinct seul quand tu composes une palette. Et un septième schéma, le plus utilisé en décoration, ne se lit même pas sur le cercle.</p>
+
+  <section>
+    <h2>Les six harmonies, lues sur le cercle</h2>
+    <p>Une harmonie de couleurs est une figure géométrique posée sur le cercle chromatique. Une fois que tu sais reconnaître ces figures, tu peux composer une palette cohérente à partir de n’importe quelle teinte de départ.</p>
+    <dl class="deflist">
+      <dt>Camaïeu (ou monochrome)</dt>
+      <dd>Une seule teinte, déclinée en plusieurs valeurs. Sur le cercle, la figure ne bouge pas d’un point : seule la luminosité varie.</dd>
+      <dt>Analogues (ou adjacentes)</dt>
+      <dd>Deux ou trois teintes voisines, prises côte à côte — un jaune, son jaune orangé, son orangé. L’effet reste doux, sans opposition franche.</dd>
+      <dt>Complémentaires</dt>
+      <dd>Deux teintes à 180° l’une de l’autre, comme le bleu et l’orangé. C’est le contraste le plus franc du cercle.</dd>
+      <dt>Complémentaire divisée (ou complémentaires adjacentes)</dt>
+      <dd>Une teinte de base et les deux teintes qui encadrent son opposé. Elle garde la tension de la complémentaire en la nuançant.</dd>
+      <dt>Triadique</dt>
+      <dd>Trois teintes à 120° les unes des autres, en triangle équilatéral. Rouge, jaune, bleu en est l’exemple le plus connu.</dd>
+      <dt>Tétradique (ou carrée)</dt>
+      <dd>Quatre teintes espacées de 90°, aux quatre coins d’un carré inscrit dans le cercle.</dd>
+    </dl>
+    <p>Plus une harmonie mobilise de teintes, plus elle est riche — et plus elle demande de rigueur pour rester lisible.</p>
+
+    <aside class="cas-reel">
+      <p class="cas-eyebrow">Cas réel · camaïeu</p>
+      <h3>Caracoli <span class="cas-place">— restaurant, Paris 18<sup>e</sup></span></h3>
+      <ul class="cas-swatches">
+        <li><span class="swatch" style="background:#C39A90"></span><span class="cas-shade">Rose Ottoman</span><span class="hex">eqRMDV39</span></li>
+        <li><span class="swatch" style="background:#F2EAD9"></span><span class="cas-shade">Lumière</span><span class="hex">eqRMDV06</span></li>
+      </ul>
+      <p>Deux teintes pour toute la salle : un rose poudré et un blanc chaud. La deuxième n’est pas un neutre posé à côté d’une couleur — c’est le ton le plus clair de la même famille chaude. Rien ne s’oppose, tout se décline : c’est la définition du camaïeu, appliquée à un lieu qui reçoit du public.</p>
+      <p>Le pari du camaïeu, c’est justement l’absence de conflit de teinte : impossible de se tromper d’accord. Sa limite est ailleurs — sans écart de valeur suffisant entre les deux tons, la salle s’aplatirait. Regarde les photos en cherchant ce que la lumière et les matières ajoutent de contraste là où la palette, elle, n’en donne presque pas.</p>
+      <p class="cas-source"><a href="https://ressource-peintures.com/inspiration/projet/caracoli/">Voir le projet chez Ressource ↗</a> · Teintes reconstituées à titre indicatif.</p>
+    </aside>
+
+    <aside class="cas-reel">
+      <p class="cas-eyebrow">Cas réel · analogues</p>
+      <h3>Les Hauts de Gordes <span class="cas-place">— bastide, Luberon</span></h3>
+      <ul class="cas-swatches">
+        <li><span class="swatch" style="background:#D6C4A8"></span><span class="cas-shade">Cordelière</span><span class="hex">STR11</span></li>
+        <li><span class="swatch" style="background:#BFA184"></span><span class="cas-shade">Faon</span><span class="hex">ER45</span></li>
+        <li><span class="swatch" style="background:#B5643C"></span><span class="cas-shade">Terre cuite</span><span class="hex">d’après le texte</span></li>
+        <li><span class="swatch" style="background:#7C8248"></span><span class="cas-shade">Vert olive</span><span class="hex">d’après le texte</span></li>
+        <li><span class="swatch" style="background:#D9C179"></span><span class="cas-shade">Jaune paille</span><span class="hex">d’après le texte</span></li>
+      </ul>
+      <p>Sept suites, un salon, une cuisine : le projet tient sur deux enduits — <em>Cordelière</em> dans les pièces communes, <em>Faon</em> dans les chambres et les salles de bain — et sur ce que le projet appelle ses « teintes conductrices », terre cuite, vert olive et jaune paille. Place ce trio sur le cercle : terre cuite, jaune paille et vert olive occupent un arc continu du rouge orangé au jaune vert. Ce sont des <strong>analogues</strong>.</p>
+      <p>C’est l’intérêt de l’harmonie analogue : elle donne de la variété sans jamais créer d’opposition, et le fil qui relie les pièces d’une suite à l’autre reste lisible. Remarque aussi que les teintes sont désaturées — des pigments minéraux et des ocres, pas des couleurs pleines. Une même figure sur le cercle produit un résultat radicalement différent selon la saturation à laquelle tu la joues.</p>
+      <p class="cas-source"><a href="https://ressource-peintures.com/inspiration/projet/les-hauts-de-gordes/">Voir le projet chez Ressource ↗</a> · Teintes reconstituées à titre indicatif ; les trois dernières d’après la description du projet, sans référence publiée.</p>
+    </aside>
+  </section>
+
+  <section>
+    <h2>Les contrastes d’Itten, pour faire vivre une harmonie</h2>
+    <p>Choisir une harmonie ne suffit pas : encore faut-il doser le contraste entre ses teintes. Johannes Itten en distingue plusieurs types ; quatre sont particulièrement utiles en déco. Le <strong>contraste chaud-froid</strong> oppose les teintes qui avancent (rouge, orangé, jaune) à celles qui reculent (bleu, vert, violet) — un camaïeu ou des analogues jouent souvent sur ce seul registre. Le <strong>contraste clair-obscur</strong> est celui qu’exploite d’abord le camaïeu : à teinte égale, l’écart de valeur suffit à structurer un espace.</p>
+    <p>Le <strong>contraste des complémentaires</strong> est le plus intense qu’offre le cercle : deux teintes opposées se renforcent mutuellement, chacune rendant l’autre plus vive. C’est ce que recherchent les harmonies complémentaires et, en version atténuée, la complémentaire divisée. Enfin, le <strong>contraste de quantité</strong> — la surface occupée par chaque teinte — détermine si une harmonie reste équilibrée ou bascule dans le chaos : deux complémentaires à parts égales se neutralisent visuellement, tandis qu’une petite touche de l’une sur un fond de l’autre la fait ressortir. C’est ce principe de proportion que tu retrouveras, formalisé, à la <a href="06-palette.html">leçon 6</a>.</p>
+    <aside class="note">
+      <p><strong>Contraste simultané.</strong> Pose un gris neutre à côté d’un rouge vif : il te paraîtra légèrement verdâtre. Ton œil, confronté à une couleur, a tendance à projeter sa complémentaire sur les zones voisines — ici, du vert, la complémentaire du rouge. Le même gris, posé à côté d’un vert, paraîtra au contraire rosé. Un neutre n’est donc jamais vraiment neutre une fois posé dans une pièce colorée : il se teinte légèrement de l’inverse de ce qui l’entoure.</p>
+    </aside>
+  </section>
+
+  <section>
+    <h2>Le schéma le plus utilisé : neutres + couleur d’accent</h2>
+    <p>En décoration, l’harmonie la plus courante n’est même pas sur le cercle : c’est une base de <strong>neutres</strong> (blanc cassé, beige, gris, taupe) rehaussée d’une seule <strong>couleur d’accent</strong>, choisie librement parmi les harmonies vues plus haut. Les neutres occupent la majorité de la pièce et absorbent les erreurs ; l’accent, lui, porte toute la charge de couleur — et peut piocher dans un camaïeu, une paire complémentaire ou une triadique sans jamais saturer l’espace.</p>
+    <p>C’est une manière pragmatique de profiter d’une harmonie franche (complémentaires, triadique) sans le risque qu’elle ferait courir en grande surface : tu la limites à un mur, un canapé, quelques coussins, et tu laisses les neutres porter le reste.</p>
+  </section>
+
+  <section class="atelier">
+    <h2>Atelier — Générateur d’harmonies</h2>
+    <p>Clique sur une teinte du cercle pour la choisir comme base, puis choisis un type d’harmonie : le cercle met en évidence les teintes retenues, et la rangée en dessous t’en donne les codes.</p>
+    <canvas id="harmony-wheel" style="width:min(320px,90%)" role="img" aria-label="Cercle chromatique pour le générateur d’harmonies"></canvas>
+    <div class="harmony-modes" id="harmony-modes"></div>
+    <p>En camaïeu, le générateur ne peut piocher aucune autre teinte du cercle : il fait varier la luminosité de la teinte de base, du plus clair au plus foncé — jamais la teinte elle-même.</p>
+    <div id="harmony-swatches" class="swatch-row"></div>
+  </section>
+
+  <section class="atelier">
+    <h2>Atelier — Devine l’harmonie</h2>
+    <p>Observe ces quatre planches d’ambiance : chacune applique une des harmonies vues plus haut. Repère la géométrie sur le cercle avant de répondre.</p>
+    <div id="moodboards" class="moodboards"></div>
+    <div id="harmony-quiz"></div>
+  </section>
+
+  <aside class="further">
+    <h2>Pour aller plus loin</h2>
+    <ul>
+      <li><a href="https://paletton.com">Paletton</a> — génère les six harmonies sur une roue, avec simulation de daltonisme (en anglais, sans compte requis).</li>
+      <li><a href="https://coolors.co">Coolors</a> — générateur de palettes rapide (en anglais, gratuit avec une limite de 10 palettes sauvegardées).</li>
+      <li>Johannes Itten, <em>Art de la couleur</em> (Dessain et Tolra) — en médiathèque ; c’est la source des contrastes chaud-froid, clair-obscur, complémentaires et quantité.</li>
+    </ul>
+  </aside>
+</main>
+<footer class="site-footer" data-lesson-nav></footer>
+<script src="assets/course.js"></script>
+<script>
+(function () {
+  const cv = document.getElementById('harmony-wheel');
+  const modesEl = document.getElementById('harmony-modes');
+  const out = document.getElementById('harmony-swatches');
+  if (!cv || !modesEl || !out) return;
+
+  function hexToHsl(hex) {
+    const r = parseInt(hex.slice(1, 3), 16) / 255;
+    const g = parseInt(hex.slice(3, 5), 16) / 255;
+    const b = parseInt(hex.slice(5, 7), 16) / 255;
+    const max = Math.max(r, g, b), min = Math.min(r, g, b);
+    const l = (max + min) / 2;
+    let h = 0, s = 0;
+    if (max !== min) {
+      const d = max - min;
+      s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+      switch (max) {
+        case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+        case g: h = (b - r) / d + 2; break;
+        default: h = (r - g) / d + 4; break;
+      }
+      h /= 6;
+    }
+    return [h * 360, s * 100, l * 100];
+  }
+
+  function hslToHex(h, s, l) {
+    s /= 100; l /= 100;
+    const a = s * Math.min(l, 1 - l);
+    const f = (n) => {
+      const k = (n + h / 30) % 12;
+      const c = l - a * Math.max(-1, Math.min(k - 3, 9 - k, 1));
+      return Math.round(255 * c).toString(16).padStart(2, '0');
+    };
+    return '#' + f(0) + f(8) + f(4);
+  }
+
+  Object.keys(AC.HARMONIES).forEach((mode) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'btn harmony-mode-btn';
+    b.dataset.mode = mode;
+    b.textContent = AC.HARMONIES[mode].label;
+    modesEl.append(b);
+  });
+
+  const state = { base: 8, mode: 'complementaire' };
+
+  function swatchEl(hex) {
+    const wrap = document.createElement('div');
+    wrap.className = 'swatch-item';
+    const sw = document.createElement('div');
+    sw.className = 'swatch';
+    sw.style.background = hex;
+    const label = document.createElement('p');
+    label.className = 'hex';
+    label.textContent = hex.toUpperCase();
+    wrap.append(sw, label);
+    return wrap;
+  }
+
+  function render() {
+    const idx = AC.HARMONIES[state.mode].of(state.base);
+    AC.drawWheel(cv, {
+      selected: idx,
+      onPick(i) { state.base = i; render(); },
+    });
+    out.innerHTML = '';
+    if (state.mode === 'camaieu') {
+      const [h, s] = hexToHsl(AC.HUES[state.base].hex);
+      [30, 45, 60, 80].forEach((l) => out.append(swatchEl(hslToHex(h, s, l))));
+    } else {
+      idx.forEach((i) => out.append(swatchEl(AC.HUES[i].hex)));
+    }
+    modesEl.querySelectorAll('.harmony-mode-btn').forEach((b) => {
+      b.classList.toggle('is-active', b.dataset.mode === state.mode);
+    });
+  }
+
+  modesEl.addEventListener('click', (e) => {
+    const b = e.target.closest('.harmony-mode-btn');
+    if (!b) return;
+    state.mode = b.dataset.mode;
+    render();
+  });
+
+  window.addEventListener('resize', render);
+  render();
+})();
+
+(function () {
+  const el = document.getElementById('moodboards');
+  if (!el) return;
+  const BOARDS = [
+    { label: 'Planche 1', colors: ['#DCE6F0', '#A9C0D8', '#6E93B8', '#3D6285', '#22405C'], alt: 'Cinq bandeaux de bleu, du plus clair au plus foncé' },
+    { label: 'Planche 2', colors: ['#EDE7DA', '#F0C64B', '#EFA63C', '#E67E2E', '#D95B2E'], alt: 'Bandeau neutre puis quatre teintes voisines allant du jaune au rouge orangé' },
+    { label: 'Planche 3', colors: ['#EDE7DA', '#35669F', '#E5DFD4', '#E67E2E', '#D8D2C2'], alt: 'Bandeaux neutres encadrant un bleu et un orangé opposés' },
+    { label: 'Planche 4', colors: ['#EDE7DA', '#B05A52', '#D8B860', '#5A7B9E', '#EDE7DA'], alt: 'Bandeaux neutres encadrant un rouge, un jaune et un bleu désaturés' },
+  ];
+  BOARDS.forEach((board) => {
+    const card = document.createElement('div');
+    card.className = 'moodboard-card';
+    const bands = board.colors.map((c, i) => '<rect x="0" y="' + (i * 30) + '" width="300" height="30" fill="' + c + '"/>').join('');
+    card.innerHTML =
+      '<svg viewBox="0 0 300 150" role="img" aria-label="' + board.label + ' : ' + board.alt + '">' + bands + '</svg>' +
+      '<p>' + board.label + '</p>';
+    el.append(card);
+  });
+})();
+
+(function () {
+  const el = document.getElementById('harmony-quiz');
+  if (!el) return;
+  AC.quiz(el, [
+    {
+      q: 'Planche 1 : quelle harmonie ?',
+      choices: [
+        { t: 'Camaïeu', ok: true, why: 'Exact : cinq bleus de la même teinte, seule la luminosité varie — c’est la définition du camaïeu.' },
+        { t: 'Analogues', ok: false, why: 'Non : des analogues combineraient plusieurs teintes voisines sur le cercle (par exemple bleu, bleu violet, violet), pas une seule teinte déclinée en valeur.' },
+        { t: 'Complémentaires', ok: false, why: 'Non : des complémentaires opposeraient deux teintes à 180° sur le cercle, comme le bleu et l’orangé — ici, tout est bleu.' },
+        { t: 'Triadique', ok: false, why: 'Non : une triadique espacerait trois teintes de 120°, comme rouge, jaune et bleu — ici, une seule teinte domine.' },
+      ],
+    },
+    {
+      q: 'Planche 2 : quelle harmonie ?',
+      choices: [
+        { t: 'Analogues', ok: true, why: 'Exact : jaune, jaune orangé, orangé et rouge orangé se suivent sur le cercle — ce sont des teintes analogues, adjacentes les unes aux autres.' },
+        { t: 'Complémentaire divisée', ok: false, why: 'Non : une complémentaire divisée retiendrait une teinte et les deux voisines de son opposé sur le cercle — ici, toutes les teintes sont voisines entre elles, pas opposées.' },
+        { t: 'Tétradique', ok: false, why: 'Non : une tétradique formerait un carré de quatre teintes espacées de 90° — ici, les teintes se suivent sans écart.' },
+        { t: 'Camaïeu', ok: false, why: 'Non : un camaïeu garderait une seule teinte en ne variant que sa valeur — ici, plusieurs teintes différentes se succèdent.' },
+      ],
+    },
+    {
+      q: 'Planche 3 : quelle harmonie ?',
+      choices: [
+        { t: 'Triadique', ok: false, why: 'Non : une triadique espacerait trois teintes de 120° — ici, il n’y a que deux teintes, à 180° l’une de l’autre.' },
+        { t: 'Analogues', ok: false, why: 'Non : des analogues seraient voisines sur le cercle — le bleu et l’orangé, eux, sont à l’opposé exact l’un de l’autre.' },
+        { t: 'Complémentaires', ok: true, why: 'Exact : le bleu et l’orangé sont à 180° l’un de l’autre sur le cercle, l’opposé exact — la définition des complémentaires.' },
+        { t: 'Complémentaire divisée', ok: false, why: 'Non : une complémentaire divisée éviterait l’opposé pile au profit de ses deux voisines — ici, l’orangé est bien l’opposé exact du bleu.' },
+      ],
+    },
+    {
+      q: 'Planche 4 : quelle harmonie ?',
+      choices: [
+        { t: 'Tétradique', ok: false, why: 'Non : une tétradique formerait un carré de quatre teintes espacées de 90° — ici, il n’y en a que trois, espacées de 120°.' },
+        { t: 'Triadique', ok: true, why: 'Exact : le rouge, le jaune et le bleu, espacés de 120° sur le cercle, forment un triangle équilatéral — la triadique.' },
+        { t: 'Camaïeu', ok: false, why: 'Non : un camaïeu ne garderait qu’une seule teinte — ici, rouge, jaune et bleu sont trois teintes distinctes.' },
+        { t: 'Complémentaires', ok: false, why: 'Non : des complémentaires seraient deux teintes opposées à 180° — ici, il y en a trois, espacées de 120°.' },
+      ],
+    },
+  ]);
+})();
+</script>
+</body>
+</html>

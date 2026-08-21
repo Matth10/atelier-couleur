@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La lumière change tout — Atelier Couleur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Karla:ital,wght@0,400;0,500;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+.light-wrap {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+#light-room {
+  position: relative;
+  --c60: #E8E2D4;
+  --c30: #8FA3A0;
+  --c10: #C1683F;
+}
+
+#light-room .room {
+  display: block;
+}
+
+#light-overlay {
+  position: absolute;
+  inset: 0;
+  mix-blend-mode: multiply;
+  border-radius: 6px;
+  pointer-events: none;
+}
+
+.light-controls {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 16px 0 10px;
+}
+
+.light-time {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 4px 0 16px;
+}
+
+.light-time input[type="range"] {
+  flex: 1;
+}
+
+.light-time span {
+  font-size: .85rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+#light-caption {
+  font-weight: 600;
+}
+
+.kelvin-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 16px 0 4px;
+}
+
+.kelvin-item {
+  flex: 1 1 140px;
+  text-align: center;
+}
+
+.kelvin-swatch {
+  position: relative;
+  height: 110px;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  overflow: hidden;
+  background: #F4F1E8;
+}
+
+.kelvin-overlay {
+  position: absolute;
+  inset: 0;
+  mix-blend-mode: multiply;
+}
+
+.kelvin-item p {
+  margin: 8px 0 0;
+  font-size: .85rem;
+  color: var(--muted);
+}
+
+.kelvin-k {
+  display: block;
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.finish-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.finish-swatch {
+  height: 180px;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  background-color: #3D6285;
+}
+
+.finish-satin {
+  background-image: linear-gradient(115deg, rgba(255, 255, 255, .10) 0%, transparent 40%);
+}
+
+.finish-brillant {
+  background-image:
+    linear-gradient(115deg, rgba(255, 255, 255, .35) 0%, transparent 35%),
+    linear-gradient(115deg, transparent 55%, rgba(255, 255, 255, .55) 58%, rgba(255, 255, 255, .55) 62%, transparent 65%);
+}
+
+#finish-caption {
+  margin-top: 12px;
+}
+</style>
+</head>
+<body data-lesson="05-lumiere">
+<header class="site-header" data-nav></header>
+<main>
+  <p class="eyebrow">Leçon 5 · Outils · ~30 min</p>
+  <h1>La lumière change tout</h1>
+  <p class="lede">Tu as choisi la teinte parfaite sur le nuancier, sous la lumière du magasin — et sur ton mur, une fois sèche, elle ne ressemble plus vraiment à ce que tu attendais. Ce n’est pas une erreur de choix : c’est la lumière qui change tout. Cette leçon te donne les repères pour l’anticiper, plutôt que de la découvrir après coup.</p>
+
+  <section>
+    <h2>Nord, sud, est, ouest : quatre lumières, quatre stratégies</h2>
+    <p>Avant de discuter teinte, regarde par où entre la lumière. Une même couleur ne se comporte pas du tout de la même façon selon l’orientation de la pièce — ces repères valent pour l’hémisphère nord, où le soleil trace sa course au sud.</p>
+    <p>Au <strong>nord</strong>, la lumière est froide et reste constante toute la journée, sans jamais de soleil direct. Deux stratégies se défendent également : compenser cette froideur par des tons chauds à base de jaune, ou au contraire assumer une couleur profonde et enveloppante qui joue avec cette lumière plutôt que de lutter contre elle. Dans tous les cas, méfie-toi du blanc : au nord, il tire vers le gris.</p>
+    <p>Au <strong>sud</strong>, la lumière est généreuse toute la journée : c’est l’orientation la plus permissive. Elle supporte pratiquement toutes les teintes, y compris des bleus froids qui, ailleurs, demanderaient plus de prudence.</p>
+    <p>À l’<strong>est</strong> et à l’<strong>ouest</strong>, la lumière change de caractère au fil de la journée : chaude le matin et froide le soir à l’est, l’inverse exact à l’ouest. La question à te poser n’est donc pas seulement « quelle orientation ? » mais « à quel moment vis-tu dans cette pièce ? » — une chambre à l’ouest, occupée surtout le soir, ne se traite pas comme un bureau à l’est, occupé surtout le matin.</p>
+  </section>
+
+  <section class="atelier">
+    <h2>Atelier — La même pièce, quatre lumières</h2>
+    <p>Choisis une orientation, puis fais glisser le curseur du matin au soir : regarde comme les mêmes murs, dans la même pièce, changent de caractère sans qu’un seul mur ait été repeint.</p>
+    <div class="light-wrap">
+      <div id="light-room"></div>
+      <div class="light-controls" id="light-orientations" role="group" aria-label="Orientation de la pièce">
+        <button type="button" class="btn" data-o="nord" aria-pressed="true">Nord</button>
+        <button type="button" class="btn" data-o="sud" aria-pressed="false">Sud</button>
+        <button type="button" class="btn" data-o="est" aria-pressed="false">Est</button>
+        <button type="button" class="btn" data-o="ouest" aria-pressed="false">Ouest</button>
+      </div>
+      <div class="light-time">
+        <span>Matin</span>
+        <input type="range" id="light-time" min="0" max="100" value="0" aria-label="Moment de la journée, du matin au soir">
+        <span>Soir</span>
+      </div>
+      <p id="light-caption"></p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Kelvin : la couleur de ton ampoule</h2>
+    <p>La lumière artificielle a elle aussi une couleur, mesurée en kelvins (K). Trois repères suffisent : 2700 K est une lumière chaude, proche de celle d’une ancienne ampoule à incandescence ; 4000 K est neutre ; 6500 K imite la lumière du jour.</p>
+    <p>Le piège, c’est que l’échelle est contre-intuitive : un kelvin <strong>bas</strong> donne une lumière <strong>chaude</strong>, un kelvin élevé une lumière froide — l’inverse de ce que le mot « chaud » suggère spontanément. Sous une ampoule à 2700 K, les rouges et les jaunes d’un mur s’avivent tandis que les bleus s’éteignent ; sous une lumière à 4000 K ou plus, c’est l’effet inverse qui domine.</p>
+  </section>
+
+  <section class="atelier">
+    <h2>Atelier — Ce blanc n’est pas blanc</h2>
+    <p>Le même blanc cassé, <span class="hex">#F4F1E8</span>, vu sous trois températures de lumière. Regarde comme un kelvin bas — pourtant le plus « chaud » — le fait virer.</p>
+    <div class="kelvin-row">
+      <div class="kelvin-item">
+        <div class="kelvin-swatch"><div class="kelvin-overlay" style="background:#FFB870; opacity:.25"></div></div>
+        <p><span class="kelvin-k">2700 K</span>chambre</p>
+      </div>
+      <div class="kelvin-item">
+        <div class="kelvin-swatch"><div class="kelvin-overlay" style="background:#FFF2DC; opacity:.08"></div></div>
+        <p><span class="kelvin-k">4000 K</span>cuisine</p>
+      </div>
+      <div class="kelvin-item">
+        <div class="kelvin-swatch"><div class="kelvin-overlay" style="background:#CFE0F0; opacity:.18"></div></div>
+        <p><span class="kelvin-k">6500 K</span>lumière du jour</p>
+      </div>
+    </div>
+  </section>
+
+  <aside class="cas-reel">
+    <p class="cas-eyebrow">Cas réel</p>
+    <h3>Quatre blancs <span class="cas-place">— nuancier Ressource</span></h3>
+    <ul class="cas-swatches">
+      <li><span class="swatch" style="background:#F7F6F3"></span><span class="cas-shade">La Pureté</span><span class="hex">blanc virginal</span></li>
+      <li><span class="swatch" style="background:#F1F0EC"></span><span class="cas-shade">Le Cygne</span><span class="hex">plume orgueilleuse</span></li>
+      <li><span class="swatch" style="background:#F6F1E4"></span><span class="cas-shade">L’Innocent</span><span class="hex">ivoire immaculé</span></li>
+      <li><span class="swatch" style="background:#F7EFDD"></span><span class="cas-shade">La Candeur</span><span class="hex">sorbet vanillé</span></li>
+    </ul>
+    <p>Ce que tu viens de faire à un seul blanc avec trois ampoules, un nuancier le fait avec quatre pots. Ressource décrit ces quatre blancs comme « jamais purs » : chacun penche vers le bleu, le gris, le beige ou la crème, et c’est ce sous-ton — pas le mot « blanc » sur l’étiquette — qui décide de ce que tu verras sur le mur.</p>
+    <p>D’où la conséquence pratique : un blanc ne se choisit pas dans l’absolu, il se choisit contre une orientation. Un blanc à sous-ton froid, au nord, ne fait qu’ajouter du froid à une lumière déjà froide — c’est le blanc qui grise, dont on parlait plus haut. Les deux blancs crémés de droite y résisteront mieux ; au sud, en revanche, ils risquent au contraire de virer au jaune en pleine lumière.</p>
+    <p class="cas-source"><a href="https://ressource-peintures.com/inspiration/produit-service/comment-choisir-son-blanc/">Lire l’article chez Ressource ↗</a> · Teintes reconstituées à titre indicatif ; le classement par sous-ton, lui, est celui du cours.</p>
+  </aside>
+
+  <section>
+    <h2>Le métamérisme : le piège des neutres</h2>
+    <p>Ce que tu viens de voir sur ce blanc a un nom : le <strong>métamérisme</strong>. Deux couleurs peuvent paraître identiques sous une lumière donnée, puis se révéler différentes sous une autre — un même pot de peinture peut ainsi sembler assorti à un meuble en magasin, et ne plus l’être du tout une fois rentré chez toi.</p>
+    <p>Le phénomène frappe surtout les gris, les blancs et les neutres : ce sont des couleurs peu saturées, où la moindre variation de lumière suffit à faire pencher la perception vers un sous-ton plutôt qu’un autre. Une couleur franche et saturée résiste beaucoup mieux au changement d’éclairage.</p>
+  </section>
+
+  <section>
+    <h2>Mat, satiné, brillant : la finition change aussi tout</h2>
+    <p>La teinte est une moitié de l’équation ; la finition — le degré de brillance de la peinture — est l’autre. Trois familles couvrent l’essentiel.</p>
+    <p>Le <strong>mat</strong> absorbe la lumière : la couleur reste stable quel que soit l’angle de vue, le rendu est velouté, et les petits défauts du support (fissures, irrégularités) se remarquent moins. Le <strong>brillant</strong> fait l’inverse : il réfléchit la lumière, avec des reflets qui changent selon l’angle — un effet qui intensifie les teintes foncées, mais qui révèle sans pitié la moindre imperfection du mur. Le <strong>satiné</strong> se tient entre les deux : un reflet léger, et une surface plus facile à nettoyer.</p>
+    <p>Ces trois mots ne sont pas que des impressions : la brillance se mesure, sur une échelle de 0 à 100 (en unités de brillance, ou UB), et certains fabricants publient leurs chiffres. Chez Ressource, par exemple, la famille mate tient tout entière entre 2 et 4 % — Mat Poudré à 2 %, Mat Essentiel à 3 %, Laque Mate et Mat Soyeux à 4 % — tandis que les satinés s’étalent de 7 % (Satin Essentiel) à 10 % (Satin Velouté), et jusqu’à 40 % pour une Laque Satinée.</p>
+    <p>Deux enseignements à en tirer. D’abord, l’écart entre deux mats est négligeable, alors que « satiné » recouvre des rendus très différents : entre 7 et 40 %, on ne parle plus du même mur. Ensuite, plus la brillance est élevée, plus la surface renvoie de lumière — un levier réel dans une pièce sombre ou sans fenêtre, où une finition plus brillante travaille pour toi. Quant à la lessivabilité, elle ne se déduit plus de la finition : il existe aujourd’hui des mats lessivables (Laque Mate, Mat Soyeux) destinés aux pièces humides et aux passages, là où un mat classique se contente d’être lavable. Vérifie la mention sur le pot, pas la famille.</p>
+  </section>
+
+  <section class="atelier">
+    <h2>Atelier — Mat, satiné ou brillant ?</h2>
+    <p>Même couleur, <span class="hex">#3D6285</span>, trois finitions. Choisis une option pour voir comment chacune capte — ou non — la lumière.</p>
+    <div class="finish-controls" id="finish-controls" role="group" aria-label="Finition de peinture">
+      <button type="button" class="btn" data-f="mat" aria-pressed="true">Mat</button>
+      <button type="button" class="btn" data-f="satin" aria-pressed="false">Satiné</button>
+      <button type="button" class="btn" data-f="brillant" aria-pressed="false">Brillant</button>
+    </div>
+    <div id="finish-swatch" class="finish-swatch finish-mat" role="img" aria-label="Échantillon de peinture bleu montrant le rendu de la finition sélectionnée"></div>
+    <p id="finish-caption"></p>
+  </section>
+
+  <section>
+    <h2>Avant de peindre : le protocole de test</h2>
+    <p>Un nuancier en magasin, sous une lumière que tu ne contrôles pas, ne te dit presque rien de ce qui t’attend chez toi. La seule méthode fiable : peindre de vrais échantillons, au format A4 minimum, sur des cartons que tu peux déplacer — jamais directement sur le mur, où tu ne pourrais plus les comparer d’un endroit à l’autre.</p>
+    <p>Déplace ces cartons sur plusieurs murs de la pièce, et observe-les le matin, à midi et le soir : c’est cette variation dans le temps qui te renseigne vraiment sur l’orientation. Juge-les toujours une fois la peinture complètement sèche — la couleur change en séchant — et place-les à côté des éléments fixes de la pièce (sol, menuiseries, cheminée) pour vérifier que tout s’accorde.</p>
+    <p>C’est aussi la raison pour laquelle les échantillons colorés des encadrés « cas réel » de ce cours sont donnés comme des reconstitutions. Aucun écran — ni le nôtre, ni un nuancier en ligne, ni la photo d’un projet — ne remplace un carton peint, sec, posé sur ton mur à l’heure où tu vis dans la pièce.</p>
+  </section>
+
+  <aside class="further">
+    <h2>Pour aller plus loin</h2>
+    <ul>
+      <li><a href="https://www.farrow-ball.com/fr/comment-la-lumiere-metamorphose-la-couleur">Comment la lumière métamorphose la couleur</a> — l’article de Farrow &amp; Ball, qui détaille l’effet de chaque orientation pièce par pièce (en français).</li>
+      <li><a href="https://www.littlegreene.fr/advice-hub/prendre-en-compte-lorientation-de-votre-piece">Prendre en compte l’orientation de votre pièce</a> — le hub de conseils de Little Greene (en français).</li>
+      <li><a href="https://ressource-peintures.com/inspiration/produit-service/peinture-mate-ou-satinee-laquelle-choisir/">Peinture mate ou satinée : laquelle choisir ?</a> — l’article de Ressource ; c’est la source des taux de brillance cités plus haut, gamme par gamme (en français).</li>
+      <li><a href="https://ressource-peintures.com/inspiration/">Inspiration</a> — le journal de Ressource, avec d’autres articles sur le choix des teintes et des finitions, et les projets dont sont tirés les « cas réels » de ce cours (en français).</li>
+      <li><a href="https://apps.apple.com/fr/app/dulux-valentine-visualizer/id551996797">Dulux Valentine Visualizer</a> — application mobile gratuite (App Store et Google Play) pour visualiser une couleur en réalité augmentée dans ta propre pièce ; pas de version web stable.</li>
+    </ul>
+  </aside>
+</main>
+<footer class="site-footer" data-lesson-nav></footer>
+<script src="assets/course.js"></script>
+<script>
+(function () {
+  const room = document.getElementById('light-room');
+  const orientEl = document.getElementById('light-orientations');
+  const timeEl = document.getElementById('light-time');
+  const caption = document.getElementById('light-caption');
+  if (!room || !orientEl || !timeEl || !caption) return;
+
+  room.innerHTML = AC.roomSVG();
+  const overlay = document.createElement('div');
+  overlay.id = 'light-overlay';
+  room.append(overlay);
+
+  const TINTS = {
+    nord: { a: ['#AEC1D6', 0.30], b: ['#A8BCD4', 0.32] },
+    sud: { a: ['#FFE3B8', 0.14], b: ['#FFD9A0', 0.20] },
+    est: { a: ['#FFD9A0', 0.30], b: ['#B4C4D8', 0.24] },
+    ouest: { a: ['#B4C4D8', 0.24], b: ['#FFBE7A', 0.32] },
+  };
+
+  const CAPTIONS = {
+    nord: 'Nord : la teinte bouge à peine du matin au soir — la lumière la plus stable, et la plus froide.',
+    sud: 'Sud : le mur garde sa chaleur à toute heure. Fais glisser le curseur, l’écart reste faible.',
+    est: 'Est : chaude au départ, la lumière se refroidit à mesure que tu pousses le curseur.',
+    ouest: 'Ouest : froide au départ, elle se réchauffe en fin de course — l’inverse exact de l’est.',
+  };
+
+  const state = { o: 'nord', t: 0 };
+
+  function apply(o, t) {
+    const { a, b } = TINTS[o];
+    overlay.style.background = t < 0.5 ? a[0] : b[0];
+    overlay.style.opacity = a[1] + (b[1] - a[1]) * t;
+    caption.textContent = CAPTIONS[o];
+  }
+
+  orientEl.addEventListener('click', (e) => {
+    const b = e.target.closest('button[data-o]');
+    if (!b) return;
+    state.o = b.dataset.o;
+    orientEl.querySelectorAll('button[data-o]').forEach((btn) => {
+      btn.setAttribute('aria-pressed', String(btn === b));
+    });
+    apply(state.o, state.t);
+  });
+
+  timeEl.addEventListener('input', () => {
+    state.t = Number(timeEl.value) / 100;
+    apply(state.o, state.t);
+  });
+
+  apply(state.o, state.t);
+})();
+
+(function () {
+  const controls = document.getElementById('finish-controls');
+  const swatch = document.getElementById('finish-swatch');
+  const caption = document.getElementById('finish-caption');
+  if (!controls || !swatch || !caption) return;
+
+  const CAPTIONS = {
+    mat: 'Aucun reflet : la couleur est la même sous tous les angles.',
+    satin: 'Un reflet léger, en haut à gauche — et une surface lessivable.',
+    brillant: 'Deux reflets francs, qui se déplaceraient avec toi dans la pièce.',
+  };
+
+  function apply(f) {
+    swatch.className = 'finish-swatch finish-' + f;
+    caption.textContent = CAPTIONS[f];
+    controls.querySelectorAll('button[data-f]').forEach((b) => {
+      b.setAttribute('aria-pressed', String(b.dataset.f === f));
+    });
+  }
+
+  controls.addEventListener('click', (e) => {
+    const b = e.target.closest('button[data-f]');
+    if (!b) return;
+    apply(b.dataset.f);
+  });
+
+  apply('mat');
+})();
+</script>
+</body>
+</html>

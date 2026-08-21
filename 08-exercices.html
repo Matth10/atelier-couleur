@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exercices &amp; auto-évaluation — Atelier Couleur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Karla:ital,wght@0,400;0,500;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.checklist li {
+  border-bottom: 1px solid var(--line);
+  padding: 12px 0;
+}
+
+.checklist li:last-child {
+  border-bottom: none;
+}
+
+.checklist label {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  cursor: pointer;
+}
+
+.checklist input[type="checkbox"] {
+  flex: none;
+  margin-top: 4px;
+}
+
+.checklist span {
+  color: var(--muted);
+}
+
+.deliverable {
+  font-weight: 700;
+}
+</style>
+</head>
+<body data-lesson="08-exercices">
+<header class="site-header" data-nav></header>
+<main>
+  <p class="eyebrow">Leçon 8 · Application · ~30 min</p>
+  <h1>Exercices &amp; auto-évaluation</h1>
+  <p class="lede">Sept leçons de méthode ne valent que si tu les mets en pratique. Cette dernière leçon te propose trois exercices à faire chez toi, puis un quiz récapitulatif pour vérifier ce qui est vraiment acquis.</p>
+
+  <section>
+    <h2>1. Analyse ta propre pièce</h2>
+    <p>Reprends la méthode en six points de la <a href="07-analyse.html">leçon 7</a>, mais applique-la cette fois à une pièce réelle de chez toi — pas à l’étude de cas. Parcours chaque point, note tes réponses, et ne saute aucune étape même si la réponse te paraît évidente : c’est souvent le point qu’on saute qui revient te gêner une fois la peinture posée.</p>
+    <ul class="checklist">
+      <li><label><input type="checkbox"><span><strong>Orientation et lumière</strong> — de quel côté vient la lumière, et à quel moment de la journée vis-tu vraiment dans cette pièce ? (<a href="05-lumiere.html">leçon 5</a>)</span></label></li>
+      <li><label><input type="checkbox"><span><strong>Volumes et hauteur</strong> — quelles sont les dimensions réelles de la pièce, pas seulement sa surface au sol ?</span></label></li>
+      <li><label><input type="checkbox"><span><strong>Usage et moments de vie</strong> — qui occupe cette pièce, et surtout quand : le matin, le soir, en semaine, le week-end ?</span></label></li>
+      <li><label><input type="checkbox"><span><strong>L’existant : sol, menuiseries, cheminée</strong> — qu’est-ce qui reste fixe, et avec quoi la nouvelle palette doit-elle s’accorder ? (<a href="05-lumiere.html">leçon 5</a>)</span></label></li>
+      <li><label><input type="checkbox"><span><strong>Circulation entre les pièces</strong> — que voit-on depuis le couloir ou la pièce voisine, pour que les teintes s’enchaînent sans heurt ?</span></label></li>
+      <li><label><input type="checkbox"><span><strong>Ambiance recherchée</strong> — en un mot, quel effet veux-tu obtenir : chaleureuse, apaisante, dynamique ?</span></label></li>
+    </ul>
+    <p class="deliverable">Livrable : une fiche d’une page, tes six réponses couchées noir sur blanc, que tu pourras reprendre au moment de choisir tes teintes.</p>
+  </section>
+
+  <section>
+    <h2>2. Reconstitue la palette d’une photo</h2>
+    <p>Trouve une photo d’intérieur qui te plaît — dans un magazine, sur Pinterest, peu importe la source. Regarde-la avec le vocabulaire des leçons précédentes plutôt qu’avec ton seul instinct : laquelle est dominante, laquelle est secondaire, laquelle sert d’accent ? Une fois les trois rôles identifiés, cherche quelle harmonie du cercle chromatique les relie — camaïeu, analogues, complémentaires, complémentaire divisée, triadique ou tétradique — et estime à l’œil les proportions : la palette est-elle proche du 60-30-10, ou s’en écarte-t-elle volontairement ?</p>
+    <p>Vérifie ensuite ton analyse avec l’extracteur de palette d’<a href="https://color.adobe.com/fr/create/color-wheel">Adobe Color</a> : dépose la photo, laisse l’outil extraire les teintes dominantes, et compare le résultat à ce que tu avais repéré à l’œil. Les écarts sont aussi instructifs que les confirmations.</p>
+  </section>
+
+  <section>
+    <h2>3. Le test réel</h2>
+    <p>Achète deux ou trois testeurs de peinture pour les teintes qui te tentent vraiment — pas plus, la sélection doit déjà être resserrée. Peins des cartons d’au moins A4 — jamais le mur directement, tu ne pourrais plus les déplacer.</p>
+    <p>Déplace ensuite ces cartons sur deux murs différents de la pièce, une fois la peinture bien sèche, et observe-les à trois moments : le matin, le midi et le soir. Regarde-les aussi à côté du sol et des menuiseries existants, pas isolés sur une table. Note ce qui change d’un moment à l’autre et d’un mur à l’autre : c’est le métamérisme de la <a href="05-lumiere.html">leçon 5</a> en action, et c’est précisément ce que ni le nuancier ni la photo d’écran ne peuvent te montrer.</p>
+  </section>
+
+  <section class="atelier">
+    <h2>Atelier — Quiz récapitulatif</h2>
+    <p>Douze questions pour vérifier ce qui reste des sept leçons précédentes. Chaque réponse renvoie à la leçon où l’approfondir si besoin.</p>
+    <div id="final-quiz"></div>
+  </section>
+
+  <section>
+    <h2>Et après ?</h2>
+    <p>La théorie de ce cours tient en sept leçons ; la maîtrise vient en les refaisant chez toi, avec tes propres murs. Rouvre l’atelier « Générateur d’harmonies » ou « Devine l’harmonie » de la <a href="03-harmonies.html">leçon 3</a> en partant de la teinte que tu as repérée à l’exercice 2. Rejoue « La pièce recolorable » ou « Et si on cassait la règle ? » de la <a href="06-palette.html">leçon 6</a> avec les trois couleurs de ta propre pièce, plutôt qu’avec la palette d’exemple. Et reprends l’étude de cas de la <a href="07-analyse.html">leçon 7</a> en remplaçant les données du salon nord fictif par celles de ta pièce réelle.</p>
+  </section>
+
+  <aside class="further">
+    <h2>Pour aller plus loin</h2>
+    <ul>
+      <li><strong>Roues et extracteurs de palette :</strong> <a href="https://color.adobe.com/fr/create/color-wheel">Adobe Color</a> (roue interactive et extraction de palette depuis une photo, en français, en cours de migration vers Adobe Express) ; <a href="https://paletton.com">Paletton</a> (simulation de daltonisme, sans compte requis, en anglais) ; <a href="https://coolors.co">Coolors</a> (génération rapide, freemium, 10 palettes sauvegardées maximum, en anglais).</li>
+      <li><strong>Simulateurs pour visualiser chez toi :</strong> <a href="https://apps.apple.com/fr/app/dulux-valentine-visualizer/id551996797">Dulux Valentine Visualizer</a> (application mobile gratuite, réalité augmentée, App Store et Google Play) ; <a href="https://www.tollens.com/simulateur-de-couleurs">simulateur Tollens</a> (gratuit, création de compte obligatoire).</li>
+      <li><strong>Pour creuser la lumière et l’orientation :</strong> <a href="https://www.farrow-ball.com/fr/comment-la-lumiere-metamorphose-la-couleur">Comment la lumière métamorphose la couleur</a>, l’article de Farrow &amp; Ball (en français) ; <a href="https://www.littlegreene.fr/advice-hub/prendre-en-compte-lorientation-de-votre-piece">Little Greene</a>, conseils sur l’orientation (en français).</li>
+      <li><strong>Pour nourrir ton œil :</strong> le journal <a href="https://ressource-peintures.com/inspiration/">Inspiration</a> de Ressource ; les <a href="https://www.argile-peinture.com/pages/conseils-couleurs">conseils couleurs</a> d’Argile ; les chaînes YouTube de <a href="https://www.youtube.com/@SophieFerjani">Sophie Ferjani</a> et <a href="https://www.youtube.com/@DocteurPeinture">Docteur Peinture</a> (toutes en français).</li>
+      <li><strong>Pour aller plus loin sur la symbolique :</strong> l’article <a href="https://fr.wikipedia.org/wiki/Symbolisme_des_couleurs">Symbolisme des couleurs</a> de Wikipédia (en français) ; la revue de synthèse d’<a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2015.00368/full">Elliot, 2015</a>, dans <em>Frontiers in Psychology</em> (en anglais, accès libre).</li>
+      <li><strong>Trois livres à emprunter en médiathèque :</strong> Johannes Itten, <em>Art de la couleur</em> (Dessain et Tolra, éd. abrégée) ; Eva Heller, <em>Psychologie de la couleur : effets et symboliques</em> (Pyramyd, 2009) ; Michel Pastoureau, <em>Bleu. Histoire d’une couleur</em> (Seuil).</li>
+    </ul>
+  </aside>
+</main>
+<footer class="site-footer" data-lesson-nav></footer>
+<script src="assets/course.js"></script>
+<script>
+(function () {
+  const el = document.getElementById('final-quiz');
+  if (!el) return;
+  AC.quiz(el, [
+    {
+      q: '2700 K, est-ce plus chaud ou plus froid que 6500 K ?',
+      choices: [
+        { t: 'Plus chaud', ok: true, why: 'Exact : un kelvin bas donne une lumière chaude, un kelvin élevé une lumière froide — l’inverse de ce que le mot suggère (leçon 5).' },
+        { t: 'Plus froid', ok: false, why: 'Non : l’échelle Kelvin est contre-intuitive, c’est l’inverse — un kelvin bas comme 2700 K est chaud (leçon 5).' },
+        { t: 'Rigoureusement identique', ok: false, why: 'Non : 2700 K (proche de l’incandescence) et 6500 K (lumière du jour) sont aux deux extrémités de l’échelle utile en déco (leçon 5).' },
+      ],
+    },
+    {
+      q: 'Une pièce orientée nord reçoit une lumière froide et constante. Quelle réponse résume les stratégies valables ?',
+      choices: [
+        { t: 'Compenser avec une dominante chaude, ou au contraire assumer une dominante profonde', ok: true, why: 'Exact : au nord, tu peux réchauffer avec du jaune, ou assumer une couleur profonde et enveloppante — les deux partis pris tiennent la route (leçon 5, étude de cas leçon 7).' },
+        { t: 'Compenser avec une dominante chaude, seule option valable', ok: false, why: 'Incomplet : compenser fonctionne, mais assumer une dominante profonde est tout aussi valable au nord (leçon 5).' },
+        { t: 'Peindre en blanc pur pour maximiser la lumière disponible', ok: false, why: 'Non : au nord, un blanc pur manque de lumière chaude à refléter et vire souvent au gris terne (leçon 5).' },
+        { t: 'Choisir uniquement des teintes froides, pour rester cohérent avec la lumière', ok: false, why: 'Non : accumuler du froid sur du froid accentue la sensation de pièce terne, sans compenser ni assumer (leçon 5).' },
+      ],
+    },
+    {
+      q: 'Quelle est la complémentaire du bleu sur le cercle RYB ?',
+      choices: [
+        { t: 'L’orangé', ok: true, why: 'Exact : sur le cercle RYB, le bleu et l’orangé sont à 180°, l’opposé exact l’un de l’autre (leçon 2).' },
+        { t: 'Le vert', ok: false, why: 'Non : le vert est une teinte voisine du bleu sur le cercle, pas son opposé (leçon 2).' },
+        { t: 'Le violet', ok: false, why: 'Non : le violet est adjacent au bleu (bleu violet), pas à 180° (leçon 2).' },
+        { t: 'Le jaune', ok: false, why: 'Non : le jaune est la complémentaire du violet, pas celle du bleu (leçon 2).' },
+      ],
+    },
+    {
+      q: 'Dans la règle des 60-30-10, que couvrent les 60 % ?',
+      choices: [
+        { t: 'Les murs et les grandes surfaces', ok: true, why: 'Exact : la dominante, à 60 %, couvre les murs et les grandes surfaces de la pièce (leçon 6).' },
+        { t: 'Le mobilier et les rideaux', ok: false, why: 'Non : mobilier et rideaux relèvent de la secondaire, à 30 % (leçon 6).' },
+        { t: 'Les coussins et petits accessoires', ok: false, why: 'Non : coussins et accessoires forment l’accent, à seulement 10 % (leçon 6).' },
+        { t: 'Le sol et le plafond uniquement', ok: false, why: 'Non : la règle des 60-30-10 porte sur la couleur des surfaces peintes et meublées, pas spécifiquement sol et plafond (leçon 6).' },
+      ],
+    },
+    {
+      q: 'Qu’est-ce que le métamérisme ?',
+      choices: [
+        { t: 'Deux couleurs identiques sous une lumière, différentes sous une autre', ok: true, why: 'Exact : c’est le piège des neutres — un même pot de peinture peut sembler assorti en magasin, et ne plus l’être une fois chez toi (leçon 5).' },
+        { t: 'Deux couleurs qui restent identiques quelle que soit la lumière', ok: false, why: 'Non : c’est l’inverse — le métamérisme désigne un changement d’apparence selon la lumière (leçon 5).' },
+        { t: 'Un défaut de fabrication du pot de peinture', ok: false, why: 'Non : ce n’est pas un défaut, c’est un effet optique lié à la lumière, qui touche surtout les neutres (leçon 5).' },
+        { t: 'L’effet d’une finition brillante qui accentue les reliefs du mur', ok: false, why: 'Non : ça, c’est un effet de la finition, pas du métamérisme (leçon 5).' },
+      ],
+    },
+    {
+      q: 'Qu’est-ce qu’un camaïeu ?',
+      choices: [
+        { t: 'Des tons différents d’une même couleur', ok: true, why: 'Exact : selon le CNRTL, le camaïeu décline une seule teinte en plusieurs valeurs (leçon 1).' },
+        { t: 'Deux couleurs opposées à 180° sur le cercle', ok: false, why: 'Non : ça, c’est la définition des complémentaires, pas du camaïeu (leçon 1).' },
+        { t: 'Trois couleurs espacées de 120° sur le cercle', ok: false, why: 'Non : ça, c’est la triadique — un camaïeu ne bouge pas de teinte (leçon 1).' },
+        { t: 'Une teinte et ses deux voisines directes', ok: false, why: 'Non : ça décrit les analogues — le camaïeu reste sur une seule teinte (leçon 1).' },
+      ],
+    },
+    {
+      q: 'Les couleurs froides (bleu, vert, violet)…',
+      choices: [
+        { t: 'Reculent visuellement et agrandissent une pièce', ok: true, why: 'Exact : dites « fuyantes », elles semblent s’éloigner — un levier utile dans une pièce étroite (leçon 1).' },
+        { t: 'Avancent visuellement et rétrécissent une pièce', ok: false, why: 'Non : c’est l’effet des couleurs chaudes, dites « saillantes » (leçon 1).' },
+        { t: 'N’ont aucun effet sur la perception de l’espace', ok: false, why: 'Non : le contraste chaud-froid est justement un levier spatial concret (leçon 1).' },
+        { t: 'Réchauffent toujours une pièce orientée nord', ok: false, why: 'Non : au nord, ce sont plutôt les teintes chaudes qui compensent le manque de chaleur lumineuse (leçon 5).' },
+      ],
+    },
+    {
+      q: 'Qu’est-ce que la complémentaire divisée ?',
+      choices: [
+        { t: 'Une teinte de base et les deux teintes qui encadrent sa complémentaire', ok: true, why: 'Exact : elle garde la tension de la complémentaire tout en la nuançant, sans viser l’opposé pile (leçon 3).' },
+        { t: 'Une teinte et son opposé exact à 180°', ok: false, why: 'Non : ça, c’est la complémentaire simple — la complémentaire divisée évite justement l’opposé pile (leçon 3).' },
+        { t: 'Trois teintes espacées de 120°, en triangle équilatéral', ok: false, why: 'Non : ça décrit la triadique, une figure différente sur le cercle (leçon 3).' },
+        { t: 'Une seule teinte déclinée en plusieurs valeurs', ok: false, why: 'Non : ça, c’est le camaïeu — la complémentaire divisée mobilise trois teintes distinctes (leçon 3).' },
+      ],
+    },
+    {
+      q: 'Entre finition mate et finition brillante…',
+      choices: [
+        { t: 'Le mat absorbe la lumière et reste stable, le brillant réfléchit et varie selon l’angle', ok: true, why: 'Exact : le mat garde un rendu stable quel que soit l’angle de vue, le brillant change avec la lumière (leçon 5).' },
+        { t: 'Le mat réfléchit davantage la lumière que le brillant', ok: false, why: 'Non : c’est l’inverse — le brillant réfléchit, le mat absorbe (leçon 5).' },
+        { t: 'La finition n’a aucun effet sur la perception d’une couleur', ok: false, why: 'Non : la finition est l’autre moitié de l’équation, avec la teinte elle-même (leçon 5).' },
+        { t: 'Le satiné est toujours identique au mat', ok: false, why: 'Non : le satiné se tient entre les deux, avec un reflet léger et une surface lessivable (leçon 5).' },
+      ],
+    },
+    {
+      q: 'Comment tester correctement un échantillon de peinture ?',
+      choices: [
+        { t: 'Peinture sèche, sur un carton A4 ou plus, sur plusieurs murs, observée matin, midi et soir', ok: true, why: 'Exact : c’est la seule façon de voir la couleur sous toutes les lumières réelles de la pièce (leçons 5 et 8).' },
+        { t: 'Directement sur le nuancier, en magasin', ok: false, why: 'Non : la lumière du magasin ne dit rien de celle de ta pièce (leçon 5).' },
+        { t: 'Un seul mur, à un seul moment de la journée', ok: false, why: 'Non : un seul mur et un seul moment ne révèlent ni le métamérisme ni les écarts de lumière au fil de la journée (leçons 5 et 8).' },
+        { t: 'Peinture encore humide, pour gagner du temps', ok: false, why: 'Non : une peinture humide n’a pas sa teinte définitive — il faut attendre qu’elle soit sèche (leçon 8).' },
+      ],
+    },
+    {
+      q: 'Qu’est-ce que le contraste simultané ?',
+      choices: [
+        { t: 'Une couleur voisine modifie la perception d’un neutre (un gris paraît verdâtre à côté d’un rouge)', ok: true, why: 'Exact : l’œil projette la complémentaire de la couleur voisine sur le neutre, qui n’est alors jamais vraiment neutre (leçon 3).' },
+        { t: 'Deux couleurs strictement identiques posées côte à côte', ok: false, why: 'Non : le contraste simultané suppose au contraire deux couleurs différentes, dont l’une teinte la perception de l’autre (leçon 3).' },
+        { t: 'L’effet d’une lumière artificielle sur une teinte', ok: false, why: 'Non : ça, c’est un effet de la lumière (voir métamérisme), pas du voisinage entre couleurs (leçon 5).' },
+        { t: 'La juxtaposition de deux complémentaires à parts égales', ok: false, why: 'Non : ça décrit le contraste de quantité, un principe distinct du contraste simultané (leçon 3).' },
+      ],
+    },
+    {
+      q: 'La symbolique des couleurs est-elle universelle ?',
+      choices: [
+        { t: 'Non, elle est culturelle et historique — elle varie selon les époques et les régions', ok: true, why: 'Exact : les travaux de Michel Pastoureau montrent qu’aucune couleur n’a de sens fixe dans le temps ou l’espace (leçon 4).' },
+        { t: 'Oui, elle est identique dans toutes les cultures', ok: false, why: 'Non : le blanc, symbole de pureté en Occident, est une couleur de deuil dans plusieurs cultures d’Asie de l’Est (leçon 4).' },
+        { t: 'Non, elle est fixée définitivement par la science', ok: false, why: 'Non : la recherche scientifique sur ce sujet est jeune et ses effets se répliquent mal, selon la revue d’Elliot 2015 (leçon 4).' },
+        { t: 'Oui, car elle repose sur des lois physiques de la lumière', ok: false, why: 'Non : la symbolique est une construction culturelle, pas une conséquence physique de la lumière (leçon 4).' },
+      ],
+    },
+  ]);
+})();
+</script>
+</body>
+</html>

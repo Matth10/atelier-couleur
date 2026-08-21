@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Composer une palette — Atelier Couleur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Karla:ital,wght@0,400;0,500;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+.palette-wrap {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+#palette-room {
+  --c60: #D8DBD3;
+  --c30: #8FA3A0;
+  --c10: #C99A5B;
+}
+
+.palette-room-svg .room {
+  display: block;
+}
+
+.palette-legend {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 0;
+  margin: 12px 0 0;
+  font-size: .85rem;
+  color: var(--muted);
+}
+
+.palette-legend li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legend-chip {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  border: 1px solid var(--line);
+  display: inline-block;
+}
+
+.palette-presets {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 22px 0 16px;
+}
+
+.palette-colors {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.color-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: .85rem;
+  color: var(--muted);
+}
+
+.color-field input[type="color"] {
+  width: 56px;
+  height: 36px;
+  padding: 2px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--paper);
+  cursor: pointer;
+}
+
+.rule-scenarios {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+#rule-caption {
+  font-weight: 600;
+  margin: 14px 0;
+}
+
+.rule-rooms {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.rule-room-item p {
+  margin: 6px 0 0;
+  font-size: .8rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+#rule-room-a, #rule-room-b {
+  --c60: #E8D9C4;
+  --c30: #B4653F;
+  --c10: #3E5C50;
+}
+</style>
+</head>
+<body data-lesson="06-palette">
+<header class="site-header" data-nav></header>
+<main>
+  <p class="eyebrow">Leçon 6 · Application · ~30 min</p>
+  <h1>Composer une palette</h1>
+  <p class="lede">Tu as des couleurs qui te plaisent — reste à savoir dans quelles proportions les répartir dans une pièce. La règle des 60-30-10 te donne un repère de départ simple.</p>
+
+  <section>
+    <h2>La règle des 60-30-10</h2>
+    <p>Une fois tes couleurs choisies — via une harmonie de la <a href="03-harmonies.html">leçon 3</a>, ou un instinct que tu veux vérifier — reste la question de la répartition : combien de chaque teinte, et où ? La règle des 60-30-10 répond par trois parts.</p>
+    <dl class="deflist">
+      <dt>60 % — la dominante</dt>
+      <dd>Les murs et les grandes surfaces.</dd>
+      <dt>30 % — la secondaire</dt>
+      <dd>Le mobilier, les rideaux, les textiles : elle structure sans écraser.</dd>
+      <dt>10 % — l’accent</dt>
+      <dd>Les coussins, les objets d’art, les céramiques : la touche la plus affirmée, sur les petites surfaces qui attirent l’œil sans s’imposer.</dd>
+    </dl>
+    <p>La règle est souvent attribuée à Mark McCauley (2004) — une attribution qui reste incertaine, et qui ne change rien à l’essentiel : ce n’est pas une loi, c’est un repère de proportion. Traite-la comme un point de départ à ajuster selon la pièce, la lumière et ton goût, jamais comme une formule à suivre au chiffre près.</p>
+  </section>
+
+  <section>
+    <h2>Construire depuis les harmonies, et les neutres</h2>
+    <p>La règle ne te dit rien sur les couleurs elles-mêmes, seulement sur leurs proportions. Pour les choisir, repars des harmonies de la <a href="03-harmonies.html">leçon 3</a> — une complémentaire divisée, une triadique, ou plus simplement une base de neutres rehaussée d’un accent. Dans la plupart des palettes qui fonctionnent, c’est le neutre ou la teinte la plus désaturée de l’harmonie qui prend les 60 %, la teinte intermédiaire qui prend les 30 %, et la couleur la plus saturée — celle qui porterait mal une grande surface — qui se réserve les 10 % d’accent.</p>
+
+    <aside class="cas-reel">
+      <p class="cas-eyebrow">Cas réel</p>
+      <h3>Tour Maubourg <span class="cas-place">— appartement haussmannien, Paris</span></h3>
+      <ul class="cas-swatches">
+        <li><span class="swatch" style="background:#F1EFE9"></span><span class="cas-shade">Le Piano</span><span class="hex">09.R187</span></li>
+      </ul>
+      <p>Une seule référence publiée pour tout l’appartement : un blanc. Le projet est décrit comme « un écrin blanc et chic » où des créations contemporaines et du mobilier iconique peuvent respirer ensemble. Autrement dit, la peinture prend ici la quasi-totalité de la surface, et les 10 % d’accent ne sont pas peints du tout — ils sont portés par les œuvres, les matières et les meubles.</p>
+      <p>C’est le 60-30-10 poussé jusqu’à sa limite, et une bonne leçon sur ce que la règle mesure vraiment : des <em>proportions visuelles</em>, pas des pots de peinture. Attention cependant à ce que cet exemple ne dit pas — il ne fonctionne que parce que la collection existe. Le même blanc dans une pièce sans objets forts, c’est le scénario « monotone » de l’atelier qui suit : rien pour accrocher l’œil.</p>
+      <p class="cas-source"><a href="https://ressource-peintures.com/inspiration/projet/tour-maubourg/">Voir le projet chez Ressource ↗</a> · Teinte reconstituée à titre indicatif.</p>
+    </aside>
+  </section>
+
+  <section class="atelier">
+    <h2>Atelier — La pièce recolorable</h2>
+    <p>Choisis un préréglage, ou ajuste toi-même les trois couleurs : regarde comme la même pièce change de caractère selon ce que tu poses en dominante, en secondaire et en accent.</p>
+    <div class="palette-wrap">
+      <div id="palette-room" class="palette-room">
+        <div class="palette-room-svg"></div>
+        <ul class="palette-legend">
+          <li><span class="legend-chip" style="background:var(--c60)"></span>60 % — murs</li>
+          <li><span class="legend-chip" style="background:var(--c30)"></span>30 % — mobilier, rideaux, textiles</li>
+          <li><span class="legend-chip" style="background:var(--c10)"></span>10 % — coussins, objets d’art, céramiques</li>
+        </ul>
+      </div>
+      <div class="palette-presets" id="palette-presets" role="group" aria-label="Palette prédéfinie">
+        <button type="button" class="btn" data-preset="apaisante" aria-pressed="true">Apaisante</button>
+        <button type="button" class="btn" data-preset="chaleureuse" aria-pressed="false">Chaleureuse</button>
+        <button type="button" class="btn" data-preset="contrastee" aria-pressed="false">Contrastée</button>
+        <button type="button" class="btn" data-preset="naturelle" aria-pressed="false">Naturelle</button>
+      </div>
+      <div class="palette-colors">
+        <label class="color-field">Dominante · 60 %<input type="color" id="palette-c60" value="#D8DBD3" aria-label="Couleur dominante, 60 %"></label>
+        <label class="color-field">Secondaire · 30 %<input type="color" id="palette-c30" value="#8FA3A0" aria-label="Couleur secondaire, 30 %"></label>
+        <label class="color-field">Accent · 10 %<input type="color" id="palette-c10" value="#C99A5B" aria-label="Couleur d’accent, 10 %"></label>
+      </div>
+    </div>
+  </section>
+
+  <section class="atelier">
+    <h2>Atelier — Et si on cassait la règle ?</h2>
+    <p>Une fois la logique du 60-30-10 comprise, tu peux aussi choisir de la briser, en connaissance de cause. Ces quatre scénarios reprennent la même palette de base pour te montrer ce que change la proportion, et non la couleur.</p>
+    <div class="rule-scenarios" id="rule-scenarios" role="group" aria-label="Scénario de répartition">
+      <button type="button" class="btn" data-scenario="equilibre" aria-pressed="true">Équilibrée 60-30-10</button>
+      <button type="button" class="btn" data-scenario="monotone" aria-pressed="false">Monotone 90-8-2</button>
+      <button type="button" class="btn" data-scenario="inversee" aria-pressed="false">Inversée 10-30-60</button>
+      <button type="button" class="btn" data-scenario="egalitaire" aria-pressed="false">Égalitaire 33-33-33</button>
+    </div>
+    <p id="rule-caption"></p>
+    <div class="rule-rooms">
+      <div class="rule-room-item">
+        <div id="rule-room-a" class="rule-room"><div class="rule-room-svg"></div></div>
+        <p>Salon 1</p>
+      </div>
+      <div class="rule-room-item" id="rule-room-b-item" hidden>
+        <div id="rule-room-b" class="rule-room"><div class="rule-room-svg"></div></div>
+        <p>Salon 2 — mêmes couleurs, redistribuées</p>
+      </div>
+    </div>
+  </section>
+
+  <aside class="further">
+    <h2>Pour aller plus loin</h2>
+    <ul>
+      <li><a href="https://color.adobe.com/fr/create/color-wheel">Adobe Color</a> — extrait une palette directement depuis une photo, à répartir ensuite selon la règle (en français, roue interactive).</li>
+      <li><a href="https://coolors.co">Coolors</a> — génère des palettes rapidement (en anglais, gratuit avec une limite de 10 palettes sauvegardées).</li>
+      <li><a href="https://www.tollens.com/simulateur-de-couleurs">Simulateur de couleurs Tollens</a> — teste une répartition sur une pièce en photo (gratuit, création de compte obligatoire).</li>
+      <li><a href="https://apps.apple.com/fr/app/dulux-valentine-visualizer/id551996797">Dulux Valentine Visualizer</a> — application mobile gratuite (App Store et Google Play) pour visualiser une répartition de couleurs en réalité augmentée dans ta propre pièce.</li>
+    </ul>
+  </aside>
+</main>
+<footer class="site-footer" data-lesson-nav></footer>
+<script src="assets/course.js"></script>
+<script>
+(function () {
+  const room = document.getElementById('palette-room');
+  const svgHolder = room && room.querySelector('.palette-room-svg');
+  const presets = document.getElementById('palette-presets');
+  const i60 = document.getElementById('palette-c60');
+  const i30 = document.getElementById('palette-c30');
+  const i10 = document.getElementById('palette-c10');
+  if (!room || !svgHolder || !presets || !i60 || !i30 || !i10) return;
+
+  svgHolder.innerHTML = AC.roomSVG();
+
+  const PRESETS = {
+    apaisante:   ['#D8DBD3', '#8FA3A0', '#C99A5B'],
+    chaleureuse: ['#E8D9C4', '#B4653F', '#3E5C50'],
+    contrastee:  ['#EDEAE2', '#2F3D66', '#E0A426'],
+    naturelle:   ['#E5DFD2', '#7A8B6F', '#A85B3C'],
+  };
+  function paint([c60, c30, c10]) {
+    room.style.setProperty('--c60', c60);
+    room.style.setProperty('--c30', c30);
+    room.style.setProperty('--c10', c10);
+    [i60, i30, i10].forEach((inp, k) => { inp.value = [c60, c30, c10][k]; });
+  }
+
+  presets.addEventListener('click', (e) => {
+    const b = e.target.closest('button[data-preset]');
+    if (!b) return;
+    paint(PRESETS[b.dataset.preset]);
+    presets.querySelectorAll('button[data-preset]').forEach((btn) => {
+      btn.setAttribute('aria-pressed', String(btn === b));
+    });
+  });
+
+  [i60, i30, i10].forEach((inp) => {
+    inp.addEventListener('input', () => paint([i60.value, i30.value, i10.value]));
+  });
+
+  paint(PRESETS.apaisante);
+})();
+
+(function () {
+  const roomA = document.getElementById('rule-room-a');
+  const roomB = document.getElementById('rule-room-b');
+  const itemB = document.getElementById('rule-room-b-item');
+  const svgA = roomA && roomA.querySelector('.rule-room-svg');
+  const svgB = roomB && roomB.querySelector('.rule-room-svg');
+  const scenarios = document.getElementById('rule-scenarios');
+  const caption = document.getElementById('rule-caption');
+  if (!roomA || !roomB || !itemB || !svgA || !svgB || !scenarios || !caption) return;
+
+  svgA.innerHTML = AC.roomSVG();
+  svgB.innerHTML = AC.roomSVG();
+
+  function paintRoom(el, colors) {
+    el.style.setProperty('--c60', colors[0]);
+    el.style.setProperty('--c30', colors[1]);
+    el.style.setProperty('--c10', colors[2]);
+  }
+
+  const SCENARIOS = {
+    equilibre: {
+      colors: ['#E8D9C4', '#B4653F', '#3E5C50'],
+      text: 'La référence équilibrée : une dominante calme, une secondaire qui structure, un accent qui ponctue.',
+    },
+    monotone: {
+      colors: ['#E8D9C4', '#E0D2BC', '#D8CCB6'],
+      text: 'Sans contraste de valeur ni d’accent, l’œil n’a rien à accrocher : la pièce s’aplatit.',
+    },
+    inversee: {
+      colors: ['#3E5C50', '#B4653F', '#E8D9C4'],
+      text: 'Possible, mais la pièce devient enveloppante, sombre — un choix fort, pas un défaut (la stratégie « assumer » de la leçon 5).',
+    },
+    egalitaire: {
+      colors: ['#E8D9C4', '#B4653F', '#3E5C50'],
+      text: 'Les trois couleurs se battent, aucune ne domine — ici réparties sur deux salons, puisque le gabarit d’une seule pièce reste, lui, fixé en 60-30-10.',
+    },
+  };
+
+  function apply(key) {
+    const s = SCENARIOS[key];
+    paintRoom(roomA, s.colors);
+    if (key === 'egalitaire') {
+      itemB.hidden = false;
+      paintRoom(roomB, [s.colors[1], s.colors[2], s.colors[0]]);
+    } else {
+      itemB.hidden = true;
+    }
+    caption.textContent = s.text;
+    scenarios.querySelectorAll('button[data-scenario]').forEach((b) => {
+      b.setAttribute('aria-pressed', String(b.dataset.scenario === key));
+    });
+  }
+
+  scenarios.addEventListener('click', (e) => {
+    const b = e.target.closest('button[data-scenario]');
+    if (!b) return;
+    apply(b.dataset.scenario);
+  });
+
+  apply('equilibre');
+})();
+</script>
+</body>
+</html>
